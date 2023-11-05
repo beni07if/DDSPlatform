@@ -9,9 +9,37 @@ class DashboardController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function dashboard()
     {
-        //
+        return view('dds.dashboard');
+    }
+    public function index2()
+    {
+        return view('dds.index2');
+    }
+    public function index3()
+    {
+        return view('dds.index3');
+    }
+    public function millInfo()
+    {
+        return view('dds.millInfo');
+    }
+    public function millAgriplotStats()
+    {
+        return view('dds.millAgriplotStats');
+    }
+    public function millSupplierInfo()
+    {
+        return view('dds.millSupplierInfo');
+    }
+    public function user()
+    {
+        return view('dds.user');
+    }
+    public function setting()
+    {
+        return view('dds.setting');
     }
 
     /**

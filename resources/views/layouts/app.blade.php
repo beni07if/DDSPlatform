@@ -310,9 +310,12 @@
                     Ut auctor gravida nulla. Nam id erat elementum, accumsan dui non, porttitor lorem.
                 </p>
             </div>
-            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+            <!-- <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
               <img src="{{ asset('asset/Rapid/assets/img/features-1.svg') }}" class="img-fluid" alt="">
-            </div>
+            </div> -->
+            <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
+            <a href="https://www.youtube.com/watch?v=szEdXHM4Vb8" target="blank" class="glightbox play-btn mb-4"></a>
+          </div>
         </div>
 
         <!-- <div class="row feature-item mt-5 pt-5">

@@ -756,6 +756,124 @@ section {
   font-size: 24px;
 }
 
+#features .video-box {
+  background: url("{{ asset('asset/Medilab/assets/img/agriplot1.png')}}") center center no-repeat;
+  /* background: url("../img/about.jpg") center center no-repeat; */
+  background-size: cover;
+  min-height: 500px;
+}
+
+#features .play-btn {
+  width: 94px;
+  height: 94px;
+  background: radial-gradient(#1977cc 50%, rgba(25, 119, 204, 0.4) 52%);
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: calc(50% - 47px);
+  top: calc(50% - 47px);
+  overflow: hidden;
+}
+
+#features .play-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 100;
+  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+#features .play-btn::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  animation-delay: 0s;
+  animation: pulsate-btn 2s;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps;
+  opacity: 1;
+  border-radius: 50%;
+  border: 5px solid rgba(25, 119, 204, 0.7);
+  top: -15%;
+  left: -15%;
+  background: rgba(198, 16, 0, 0);
+}
+
+#features .play-btn:hover::after {
+  border-left: 15px solid #1977cc;
+  transform: scale(20);
+}
+
+#features .play-btn:hover::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border: none;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 200;
+  animation: none;
+  border-radius: 0;
+}
+
+/* #features {
+  padding: 70px 0 60px;
+} */
+
+#features2 {
+  padding: 80px 0;
+  background-color: #F5F8FD;
+}
+
+#features2 h4 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+#features2 .count-box {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+}
+
+#features2 .count-box i {
+  font-size: 42px;
+  line-height: 0;
+  margin-right: 20px;
+  color: #4154f1;
+}
+
+#features2 .count-box span {
+  font-size: 26px;
+  display: block;
+  font-weight: 600;
+  color: #0b198f;
+}
+
+#features2 .count-box p {
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+}
+
 /* Portfolio Section
 --------------------------------*/
 #portfolio {
