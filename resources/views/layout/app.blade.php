@@ -50,10 +50,10 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#services">Features</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">News</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#team">Testimonial</a></li>
-          <li><a class="nav-link scrollto" href="{{route('dashboard')}}">Login</a></li>
+          <li><a class="nav-link scrollto" href="#features">About</a></li>
+          <li><a class="nav-link scrollto" href="#features2">News</a></li>
+          <li><a class="nav-link scrollto" href="#testimonials">Testimonial</a></li>
+          <li><a class="nav-link scrollto" href="{{route('dashboard')}}" target="_blank">Login</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -506,35 +506,35 @@
 
           <li class="nav-item col-6 col-md-4 col-lg-3" align="center">
             <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-              <i class="bi bi-binoculars color-cyan"></i>
+              <i class="bi bi-tree color-cyan"></i>
               <h4>Palm Oil</h4>
             </a>
           </li><!-- End Tab 1 Nav -->
 
           <li class="nav-item col-6 col-md-4 col-lg-2" align="center">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-              <i class="bi bi-box-seam color-indigo"></i>
+              <i class="bi bi-tree color-indigo"></i>
               <h4>Rubber</h4>
             </a>
           </li><!-- End Tab 2 Nav -->
 
           <li class="nav-item col-6 col-md-4 col-lg-2" align="center">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-              <i class="bi bi-brightness-high color-teal"></i>
+              <i class="bi bi-tree color-teal"></i>
               <h4>Soy</h4>
             </a>
           </li><!-- End Tab 3 Nav -->
 
           <li class="nav-item col-6 col-md-4 col-lg-2" align="center">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-              <i class="bi bi-command color-red"></i>
+              <i class="bi bi-tree color-red"></i>
               <h4>Cocoa</h4>
             </a>
           </li><!-- End Tab 4 Nav -->
 
           <li class="nav-item col-6 col-md-4 col-lg-3" align="center">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-5">
-              <i class="bi bi-easel color-blue"></i>
+              <i class="bi bi-tree color-blue"></i>
               <h4>Coffee</h4>
             </a>
           </li><!-- End Tab 5 Nav -->
@@ -548,10 +548,10 @@
               <div class="col-lg-12 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                 <div class="row">
                 <br>
-                  <h3>Palm Oil</h3>
+                  <h3></h3>
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-emoji-smile"></i>
+                      <i class="bi bi-flag"></i>
                       <div>
                         <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter">Countries</span>
                         <!-- <p>Countries</p> -->
@@ -562,7 +562,7 @@
   
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+                      <i class="bi bi-geo" style="color: #ee6c20;"></i>
                       <div>
                         <span data-purecounter-start="0" data-purecounter-end="60" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Projects</p> -->
@@ -573,7 +573,7 @@
   
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-headset" style="color: #15be56;"></i>
+                      <i class="bi bi-map" style="color: #15be56;"></i>
                       <div>
                         <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Hours Of Support</p> -->
@@ -592,10 +592,10 @@
               <div class="col-lg-12 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                 <div class="row">
                 <br>
-                  <h3>Rubber</h3>
+                  <h3></h3>
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-emoji-smile"></i>
+                      <i class="bi bi-flag"></i>
                       <div>
                         <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
                        
@@ -606,21 +606,23 @@
   
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+                      <i class="bi bi-geo" style="color: #ee6c20;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Projects</p> -->
                       </div>
+                      <span>M&nbsp; of plots</span>
                     </div>
                   </div>
   
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-headset" style="color: #15be56;"></i>
+                      <i class="bi bi-map" style="color: #15be56;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Hours Of Support</p> -->
                       </div>
+                      <span>M&nbsp; ha of plots</span>
                     </div>
                   </div>
   
@@ -634,34 +636,37 @@
               <div class="col-lg-12 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                 <div class="row">
                   <br>
-                  <h3>Soy</h3>
+                  <h3></h3>
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-emoji-smile"></i>
+                      <i class="bi bi-flag"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Countries</p>
+                        <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+                        <!-- <p>Countries</p> -->
                       </div>
+                      <span>&nbsp; countries</span>
                     </div>
                   </div>
   
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+                      <i class="bi bi-geo" style="color: #ee6c20;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Projects</p> -->
                       </div>
+                      <span>M&nbsp; of plots</span>
                     </div>
                   </div>
   
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-headset" style="color: #15be56;"></i>
+                      <i class="bi bi-map" style="color: #15be56;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Hours Of Support</p> -->
                       </div>
+                      <span>M&nbsp; ha of plots</span>
                     </div>
                   </div>
   
@@ -675,34 +680,37 @@
               <div class="col-lg-12 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                 <div class="row">
                 <br>
-                  <h3>Cocoa</h3>
+                  <h3></h3>
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-emoji-smile"></i>
+                      <i class="bi bi-flag"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Countries</p>
+                        <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+                        <!-- <p>Countries</p> -->
                       </div>
+                      <span>&nbsp; countries</span>
                     </div>
                   </div>
   
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+                      <i class="bi bi-geo" style="color: #ee6c20;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Projects</p> -->
                       </div>
+                      <span>M&nbsp; of plots</span>
                     </div>
                   </div>
   
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-headset" style="color: #15be56;"></i>
+                      <i class="bi bi-map" style="color: #15be56;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Hours Of Support</p> -->
                       </div>
+                      <span>M&nbsp; ha of plots</span>
                     </div>
                   </div>
   
@@ -716,34 +724,37 @@
               <div class="col-lg-12 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                 <div class="row">
                 <br>
-                  <h3>Coffee</h3>
+                  <h3></h3>
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-emoji-smile"></i>
+                      <i class="bi bi-flag"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Countries</p>
+                        <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+                        <!-- <p>Countries</p> -->
                       </div>
+                      <span>&nbsp; countries</span>
                     </div>
                   </div>
   
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+                      <i class="bi bi-geo" style="color: #ee6c20;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="17" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Projects</p> -->
                       </div>
+                      <span>M&nbsp; of plots</span>
                     </div>
                   </div>
   
                   <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                      <i class="bi bi-headset" style="color: #15be56;"></i>
+                      <i class="bi bi-map" style="color: #15be56;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Hours Of Support</p> -->
                       </div>
+                      <span>M&nbsp; ha of plots</span>
                     </div>
                   </div>
   
@@ -1158,7 +1169,7 @@
                     <td>Details</td>
                   </tr>
                   <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">2</th>
                     <td>Henkel AG & Co. KGaA</td>
                     <td>Oil palm</td>
                     <td>Germany</td>
@@ -1168,7 +1179,7 @@
                     <td>Details</td>
                   </tr>
                   <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">3</th>
                     <td>Vandemoortele NV</td>
                     <td>Oil palm</td>
                     <td>Belgium</td>
@@ -1178,7 +1189,7 @@
                     <td>Details</td>
                   </tr>
                   <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">4</th>
                     <td>Upfield Europe B.V</td>
                     <td>Oil palm</td>
                     <td>Nederlands</td>

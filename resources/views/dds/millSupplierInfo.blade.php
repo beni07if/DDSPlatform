@@ -153,7 +153,7 @@
                     <td>8,503.02</td>
                     <td>None</td>
                     <td>None</td>
-                    <td>Details</td>
+                    <td><a href="#" class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Details</a></td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
@@ -163,7 +163,7 @@
                     <td>8,503.02</td>
                     <td>None</td>
                     <td>Yes</td>
-                    <td>Details</td>
+                    <td><a href="#" class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Details</a></td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
@@ -173,7 +173,7 @@
                     <td>8,503.02</td>
                     <td>Yes</td>
                     <td>None</td>
-                    <td>Details</td>
+                    <td><a href="#" class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Details</a></td>
                   </tr>
                   <tr>
                     <th scope="row">4</th>
@@ -183,7 +183,7 @@
                     <td>8,503.02</td>
                     <td>None</td>
                     <td>Yes</td>
-                    <td>Details</td>
+                    <td><a href="#" class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Details</a></td>
                   </tr>
                 </tbody>
               </table>
@@ -226,7 +226,7 @@
                     <td>8,503.02</td>
                     <td>None</td>
                     <td>None</td>
-                    <td>Details</td>
+                    <td><a href="#" class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Details</a></td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
@@ -236,7 +236,7 @@
                     <td>8,503.02</td>
                     <td>None</td>
                     <td>Yes</td>
-                    <td>Details</td>
+                    <td><a href="#" class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Details</a></td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
@@ -246,7 +246,7 @@
                     <td>8,503.02</td>
                     <td>Yes</td>
                     <td>None</td>
-                    <td>Details</td>
+                    <td><a href="#" class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Details</a></td>
                   </tr>
                   <tr>
                     <th scope="row">4</th>
@@ -256,7 +256,7 @@
                     <td>8,503.02</td>
                     <td>None</td>
                     <td>Yes</td>
-                    <td>Details</td>
+                    <td><a href="#" class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i>Details</a></td>
                   </tr>
                 </tbody>
               </table>
