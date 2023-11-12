@@ -34,6 +34,7 @@ return new class extends Migration
             $table->string('ndpe')->nullable();
             $table->string('pko_supplier')->nullable();
             $table->string('methane_capture')->nullable();
+            $table->string('risk_assessment')->nullable();
             $table->timestamps();
         });
     }

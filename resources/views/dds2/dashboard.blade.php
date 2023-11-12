@@ -52,14 +52,14 @@
                                 <h5 class="card-title">Facilities <span></span></h5>
 
                                 <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-buildings"></i>
-                                </div>
-                                <div class="ps-3">
-                                    <h6>5</h6>
-                                    <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Facilities</span>
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-buildings"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6>{{$facilities}}</h6>
+                                        <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Facilities</span>
 
-                                </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -74,14 +74,14 @@
                                 <h5 class="card-title">Refinery supplier <span></span></h5>
 
                                 <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-flag"></i>
-                                </div>
-                                <div class="ps-3">
-                                    <h6>1</h6>
-                                    <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Facilities</span>
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-buildings"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6>{{$refineries}}</h6>
+                                        <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Facilities</span>
 
-                                </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -96,14 +96,14 @@
                                 <h5 class="card-title">Mill supplier <span></span></h5>
 
                                 <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-buildings"></i>
-                                </div>
-                                <div class="ps-3">
-                                    <h6>75</h6>
-                                    <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Mills</span>
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-buildings"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6>{{$mills}}</h6>
+                                        <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Mills</span>
 
-                                </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -121,48 +121,53 @@
                                     <canvas id="doughnutChart" style="max-height: 400px;"></canvas>
                                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                                     <script>
-                                    document.addEventListener("DOMContentLoaded", () => {
-                                        new Chart(document.getElementById('doughnutChart'), {
-                                            type: 'doughnut',
-                                            data: {
-                                                labels: ['Indonesia', 'PNG', 'Malaysia'],
-                                                datasets: [{
-                                                    label: 'Mill',
-                                                    data: [500, 200, 300],
-                                                    backgroundColor: [
-                                                        'rgb(255, 99, 132)',
-                                                        'rgb(54, 162, 235)',
-                                                        'rgb(255, 205, 86)'
-                                                    ],
-                                                    hoverOffset: 4
-                                                }]
-                                            },
-                                            options: {
-                                                plugins: {
-                                                    legend: {
-                                                        display: true,
-                                                        position: 'bottom'
-                                                    },
-                                                    tooltip: {
-                                                        callbacks: {
-                                                            label: function(context) {
-                                                                let label = context.label || '';
-                                                                if (label) {
-                                                                    label += ': ';
+                                        document.addEventListener("DOMContentLoaded", () => {
+                                            let labels = @json(array_column($millRegionArray, 'region'));
+                                            let dataCounts = @json(array_column($millRegionArray, 'count'));
+
+                                            new Chart(document.getElementById('doughnutChart'), {
+                                                type: 'doughnut',
+                                                data: {
+                                                    labels: labels,
+                                                    datasets: [{
+                                                        label: 'Mill',
+                                                        data: dataCounts,
+                                                        backgroundColor: [
+                                                            'rgb(112, 99, 142)',
+                                                            'rgb(54, 162, 235)',
+                                                            'rgb(255, 99, 132)',
+                                                            'rgb(214, 102, 205)',
+                                                            'rgb(155, 205, 116)'
+                                                            // ...tambahkan warna lain jika diperlukan
+                                                        ],
+                                                        hoverOffset: 4
+                                                    }]
+                                                },
+                                                options: {
+                                                    plugins: {
+                                                        legend: {
+                                                            display: true,
+                                                            position: 'bottom'
+                                                        },
+                                                        tooltip: {
+                                                            callbacks: {
+                                                                label: function(context) {
+                                                                    let label = context.label || '';
+                                                                    if (label) {
+                                                                        label += ': ';
+                                                                    }
+                                                                    label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
+                                                                    return label;
                                                                 }
-                                                                label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                return label;
                                                             }
                                                         }
                                                     }
                                                 }
-                                            }
+                                            });
                                         });
-                                    });
                                     </script>
 
-                                    <!-- End Doughnut CHart -->
-
+                                    <!-- End Doughnut Chart -->
                                 </div>
 
                             </div>
@@ -181,16 +186,21 @@
                                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                                     <script>
                                         document.addEventListener("DOMContentLoaded", () => {
+                                            let labels = @json(array_column($millTypeArray, 'mill_type'));
+                                            let dataCounts = @json(array_column($millTypeArray, 'count'));
+
                                             new Chart(document.getElementById('doughnutChart2'), {
                                                 type: 'doughnut',
                                                 data: {
-                                                    labels: ['Manage by plantation', 'Independent mill'],
+                                                    labels: labels,
                                                     datasets: [{
                                                         label: 'Mill',
-                                                        data: [5345, 300],
+                                                        data: dataCounts,
                                                         backgroundColor: [
                                                             'rgb(255, 99, 132)',
+                                                            'rgb(54, 162, 235)',
                                                             'rgb(255, 205, 86)'
+                                                            // ...tambahkan warna lain jika diperlukan
                                                         ],
                                                         hoverOffset: 4
                                                     }]
@@ -236,16 +246,21 @@
                                     <canvas id="doughnutChart3" style="max-height: 400px;"></canvas>
                                     <script>
                                         document.addEventListener("DOMContentLoaded", () => {
+                                            let labels = @json(array_column($millRspoCertifiedArray, 'rspo_certified'));
+                                            let dataCounts = @json(array_column($millRspoCertifiedArray, 'count'));
+
                                             new Chart(document.getElementById('doughnutChart3'), {
                                                 type: 'doughnut',
                                                 data: {
-                                                    labels: ['Yes', 'No'],
+                                                    labels: labels,
                                                     datasets: [{
                                                         label: 'Mill',
-                                                        data: [20, 70],
+                                                        data: dataCounts,
                                                         backgroundColor: [
                                                             'rgb(255, 99, 132)',
+                                                            'rgb(54, 162, 235)',
                                                             'rgb(255, 205, 86)'
+                                                            // ...tambahkan warna lain jika diperlukan
                                                         ],
                                                         hoverOffset: 4
                                                     }]
@@ -387,53 +402,25 @@
                                                 <th scope="col">Mill name</th>
                                                 <th scope="col">Region</th>
                                                 <th scope="col">Country</th>
-                                                <th scope="col">Group company</th>
+                                                <th scope="col">Group</th>
                                                 <th scope="col">Company</th>
                                                 <th scope="col">RSPO certified</th>
-                                                <th scope="col">Edit</th>
+                                                <th scope="col">Detail</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mill 1</td>
-                                                <td>Sumatra</td>
-                                                <td>Indonesia</td>
-                                                <td>Adimulia</td>
-                                                <td>Abdi Budi Mulia</td>
-                                                <td>Yes</td>
-                                                <td>Edit</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Mill 2</td>
-                                                <td>Sumatra</td>
-                                                <td>Indonesia</td>
-                                                <td>Adimulia</td>
-                                                <td>Abdi Budi Mulia</td>
-                                                <td>Yes</td>
-                                                <td>Edit</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Mill 3</td>
-                                                <td>Sumatra</td>
-                                                <td>Indonesia</td>
-                                                <td>Adimulia</td>
-                                                <td>Abdi Budi Mulia</td>
-                                                <td>Yes</td>
-                                                <td>Edit</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">4</th>
-                                                <td>Mill 4</td>
-                                                <td>Sumatra</td>
-                                                <td>Indonesia</td>
-                                                <td>Adimulia</td>
-                                                <td>Abdi Budi Mulia</td>
-                                                <td>Yes</td>
-                                                <td>Edit</td>
-                                            </tr>
+                                                @foreach($millss as $key => $mill)
+                                                <tr>
+                                                    <th scope="row">{{ $key + 1 }}</th>
+                                                    <td>{{$mill->mill_name}}</td>
+                                                    <td>{{$mill->region}}</td>
+                                                    <td>{{$mill->country}}</td>
+                                                    <td>{{$mill->group_name}}</td>
+                                                    <td>{{$mill->company_name}}</td>
+                                                    <td>{{$mill->rspo_certified}}</td>
+                                                    <td>Detail</td>
+                                                </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                         <!-- End Table with stripped rows -->
@@ -452,44 +439,50 @@
                                                         <canvas id="doughnutChart5" style="max-height: 400px;"></canvas>
                                                         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                                                         <script>
-                                                        document.addEventListener("DOMContentLoaded", () => {
-                                                            new Chart(document.getElementById('doughnutChart5'), {
-                                                                type: 'doughnut',
-                                                                data: {
-                                                                    labels: ['Indonesia', 'PNG', 'Malaysia'],
-                                                                    datasets: [{
-                                                                        label: 'Mill',
-                                                                        data: [500, 200, 300],
-                                                                        backgroundColor: [
-                                                                            'rgb(255, 99, 132)',
-                                                                            'rgb(54, 162, 235)',
-                                                                            'rgb(255, 205, 86)'
-                                                                        ],
-                                                                        hoverOffset: 4
-                                                                    }]
-                                                                },
-                                                                options: {
-                                                                    plugins: {
-                                                                        legend: {
-                                                                            display: true,
-                                                                            position: 'bottom'
-                                                                        },
-                                                                        tooltip: {
-                                                                            callbacks: {
-                                                                                label: function(context) {
-                                                                                    let label = context.label || '';
-                                                                                    if (label) {
-                                                                                        label += ': ';
+                                                            document.addEventListener("DOMContentLoaded", () => {
+                                                                let labels = @json(array_column($millRegionArray2, 'region'));
+                                                                let dataCounts = @json(array_column($millRegionArray2, 'count'));
+
+                                                                new Chart(document.getElementById('doughnutChart5'), {
+                                                                    type: 'doughnut',
+                                                                    data: {
+                                                                        labels: labels,
+                                                                        datasets: [{
+                                                                            label: 'Mill',
+                                                                            data: dataCounts,
+                                                                            backgroundColor: [
+                                                                                'rgb(112, 99, 142)',
+                                                                                'rgb(54, 162, 235)',
+                                                                                'rgb(255, 99, 132)',
+                                                                                'rgb(214, 102, 205)',
+                                                                                'rgb(155, 205, 116)'
+                                                                                // ...tambahkan warna lain jika diperlukan
+                                                                            ],
+                                                                            hoverOffset: 4
+                                                                        }]
+                                                                    },
+                                                                    options: {
+                                                                        plugins: {
+                                                                            legend: {
+                                                                                display: true,
+                                                                                position: 'bottom'
+                                                                            },
+                                                                            tooltip: {
+                                                                                callbacks: {
+                                                                                    label: function(context) {
+                                                                                        let label = context.label || '';
+                                                                                        if (label) {
+                                                                                            label += ': ';
+                                                                                        }
+                                                                                        label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
+                                                                                        return label;
                                                                                     }
-                                                                                    label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                                    return label;
                                                                                 }
                                                                             }
                                                                         }
                                                                     }
-                                                                }
+                                                                });
                                                             });
-                                                        });
                                                         </script>
 
                                                         <!-- End Doughnut CHart -->
@@ -512,16 +505,23 @@
                                                         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                                                         <script>
                                                             document.addEventListener("DOMContentLoaded", () => {
+                                                                let labels = @json(array_column($millTypeArray2, 'mill_type'));
+                                                                let dataCounts = @json(array_column($millTypeArray2, 'count'));
+
                                                                 new Chart(document.getElementById('doughnutChart6'), {
                                                                     type: 'doughnut',
                                                                     data: {
-                                                                        labels: ['Manage by plantation', 'Independent mill'],
+                                                                        labels: labels,
                                                                         datasets: [{
                                                                             label: 'Mill',
-                                                                            data: [5345, 300],
+                                                                            data: dataCounts,
                                                                             backgroundColor: [
+                                                                                'rgb(112, 99, 142)',
+                                                                                'rgb(54, 162, 235)',
                                                                                 'rgb(255, 99, 132)',
-                                                                                'rgb(255, 205, 86)'
+                                                                                'rgb(214, 102, 205)',
+                                                                                'rgb(155, 205, 116)'
+                                                                                // ...tambahkan warna lain jika diperlukan
                                                                             ],
                                                                             hoverOffset: 4
                                                                         }]
@@ -567,16 +567,23 @@
                                                         <canvas id="doughnutChart7" style="max-height: 400px;"></canvas>
                                                         <script>
                                                             document.addEventListener("DOMContentLoaded", () => {
+                                                                let labels = @json(array_column($millRspoCertifiedArray2, 'rspo_certified'));
+                                                                let dataCounts = @json(array_column($millRspoCertifiedArray2, 'count'));
+
                                                                 new Chart(document.getElementById('doughnutChart7'), {
                                                                     type: 'doughnut',
                                                                     data: {
-                                                                        labels: ['Yes', 'No'],
+                                                                        labels: labels,
                                                                         datasets: [{
                                                                             label: 'Mill',
-                                                                            data: [20, 70],
+                                                                            data: dataCounts,
                                                                             backgroundColor: [
+                                                                                'rgb(112, 99, 142)',
+                                                                                'rgb(54, 162, 235)',
                                                                                 'rgb(255, 99, 132)',
-                                                                                'rgb(255, 205, 86)'
+                                                                                'rgb(214, 102, 205)',
+                                                                                'rgb(155, 205, 116)'
+                                                                                // ...tambahkan warna lain jika diperlukan
                                                                             ],
                                                                             hoverOffset: 4
                                                                         }]
@@ -616,22 +623,29 @@
                                                 <div class="card info-card revenue-card">
 
                                                     <div class="card-body">
-                                                        <h5 class="card-title">Supplier Risk</h5>
+                                                        <h5 class="card-title">Supplier Risk (Group)</h5>
 
                                                         <!-- Doughnut Chart -->
                                                         <canvas id="doughnutChart8" style="max-height: 400px;"></canvas>
                                                         <script>
                                                             document.addEventListener("DOMContentLoaded", () => {
+                                                                let labels = @json(array_column($millNdpeArray, 'ndpe'));
+                                                                let dataCounts = @json(array_column($millNdpeArray, 'count'));
+
                                                                 new Chart(document.getElementById('doughnutChart8'), {
                                                                     type: 'doughnut',
                                                                     data: {
-                                                                        labels: ['Yes', 'No'],
+                                                                        labels: labels,
                                                                         datasets: [{
                                                                             label: 'Mill',
-                                                                            data: [20, 70],
+                                                                            data: dataCounts,
                                                                             backgroundColor: [
+                                                                                'rgb(112, 99, 142)',
+                                                                                'rgb(54, 162, 235)',
                                                                                 'rgb(255, 99, 132)',
-                                                                                'rgb(255, 205, 86)'
+                                                                                'rgb(214, 102, 205)',
+                                                                                'rgb(155, 205, 116)'
+                                                                                // ...tambahkan warna lain jika diperlukan
                                                                             ],
                                                                             hoverOffset: 4
                                                                         }]
@@ -782,7 +796,7 @@
                                                 <div class="card info-card revenue-card">
 
                                                     <div class="card-body">
-                                                        <h5 class="card-title">Supplier mill region</h5>
+                                                        <h5 class="card-title">Supplybase region</h5>
 
                                                         <!-- Doughnut Chart -->
                                                         <canvas id="doughnutChart9" style="max-height: 400px;"></canvas>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Mill;
+use DB;
 
 class DashboardController extends Controller
 {
@@ -11,7 +13,60 @@ class DashboardController extends Controller
      */
     public function dashboard()
     {
-        return view('dds2.dashboard');
+        $millss = Mill::all();
+        $mills = DB::table('mills')
+            ->count();
+        $facilities = DB::table('refineries')
+            ->count();
+        $refineries = DB::table('refineries')
+            ->where('facility_type', 'like', '%Refinery%')
+            ->count();
+
+        $millRegion = DB::table('mills')
+        ->select('region', DB::raw('COUNT(*) as count'))
+        ->groupBy('region')
+        ->get();
+        $millRegionArray = $millRegion->toArray();
+
+        $millRegion2 = DB::table('mills')
+        ->select('region', DB::raw('COUNT(*) as count'))
+        ->groupBy('region')
+        ->get();
+        $millRegionArray2 = $millRegion2->toArray();
+
+        $millType = DB::table('mills')
+        ->select('mill_type', DB::raw('COUNT(*) as count'))
+        ->groupBy('mill_type')
+        ->get();
+        $millTypeArray = $millType->toArray();
+
+        $millType2 = DB::table('mills')
+        ->select('mill_type', DB::raw('COUNT(*) as count'))
+        ->groupBy('mill_type')
+        ->get();
+        $millTypeArray2 = $millType2->toArray();
+
+        $millRspoCertified = DB::table('mills')
+        ->select('rspo_certified', DB::raw('COUNT(*) as count'))
+        ->groupBy('rspo_certified')
+        ->get();
+        $millRspoCertifiedArray = $millRspoCertified->toArray();
+
+        $millRspoCertified2 = DB::table('mills')
+        ->select('rspo_certified', DB::raw('COUNT(*) as count'))
+        ->groupBy('rspo_certified')
+        ->get();
+        $millRspoCertifiedArray2 = $millRspoCertified2->toArray();
+
+        $millNdpe = DB::table('mills')
+        ->select('ndpe', DB::raw('COUNT(*) as count'))
+        ->groupBy('ndpe')
+        ->get();
+        $millNdpeArray = $millNdpe->toArray();
+        
+        return view('dds2.dashboard', compact('millRegionArray', 'millRegionArray2', 'millTypeArray', 'millTypeArray2', 'millRspoCertifiedArray', 'millRspoCertifiedArray2', 'millNdpeArray', 'mills', 'millss', 'facilities', 'refineries'));
+        
+        
     }
     public function index2()
     {
