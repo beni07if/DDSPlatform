@@ -249,6 +249,10 @@ h6 {
 .card-body {
   padding: 0 20px 20px 20px;
 }
+.card-head  {
+  padding: 15px 15px 0px 15px;
+  /* padding: 40px -20px -20px -20px; */
+}
 
 .card-img-overlay {
   background-color: rgba(255, 255, 255, 0.6);
@@ -633,7 +637,7 @@ h6 {
 
   #main,
   #footer {
-    margin-left: 300px;
+    /* margin-left: 300px; */
   }
 }
 

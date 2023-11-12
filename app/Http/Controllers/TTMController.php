@@ -2,44 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class TTMController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function dashboard()
+    public function index()
     {
-        return view('dds2.dashboard');
-    }
-    public function index2()
-    {
-        return view('dds.index2');
-    }
-    public function index3()
-    {
-        return view('dds.index3');
-    }
-    public function millInfo()
-    {
-        return view('dds.millInfo');
-    }
-    public function millAgriplotStats()
-    {
-        return view('dds.millAgriplotStats');
-    }
-    public function millSupplierInfo()
-    {
-        return view('dds.millSupplierInfo');
-    }
-    public function user()
-    {
-        return view('dds.user');
-    }
-    public function setting()
-    {
-        return view('dds.setting');
+        //
     }
 
     /**

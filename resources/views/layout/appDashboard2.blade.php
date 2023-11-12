@@ -46,6 +46,7 @@
   <!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
+  @include('layout.sidebar')
   <!-- End Sidebar-->
 
   @yield('content')
@@ -80,7 +81,7 @@
   <!-- Template Main JS File -->
   <script src="{{ asset('asset/NiceAdmin/assets/js/main.js') }}"></script>
 
-  <!-- @yield('mapsLeaflet') -->
+  @yield('mapsLeaflet')
 
 </body>
 

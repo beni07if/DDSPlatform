@@ -5,7 +5,7 @@
     <img src="{{ asset('asset/NiceAdmin/assets/img/logo-agriplot.png') }}" alt="">
     <span class="d-none d-lg-block">Inovasi Agriplot</span>
   </a>
-  <!-- <i class="bi bi-list toggle-sidebar-btn"></i> -->
+  <i class="bi bi-list toggle-sidebar-btn"></i>
 </div><!-- End Logo -->
 
 <div class="search-bar">
@@ -13,7 +13,7 @@
     <input type="text" name="query" placeholder="Search" title="Enter search keyword">
     <button type="submit" title="Search"><i class="bi bi-search"></i></button>
   </form> -->
-  <span class="d-none d-lg-block">Due Diligence System (DDS)</span>
+  <span class="d-none d-lg-block">Due Dilligence System (DDS)</span>
 </div>
 <!-- End Search Bar -->
 
@@ -106,7 +106,7 @@
     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
         <div>
         <span class="d-none d-md-block" style="font-size: 16px;">Sakti Anggara</span>
-        <!-- <span class="d-none d-lg-block text-muted" style="font-size: 10px;">Project Manager</span> -->
+        <span class="d-none d-lg-block text-muted" style="font-size: 10px;">Company Name</span>
         </div>
         <img src="{{ asset('asset/NiceAdmin/assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
     </a>
