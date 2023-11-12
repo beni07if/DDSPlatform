@@ -405,8 +405,8 @@
                                                 <td>Edit</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mill 1</td>
+                                                <th scope="row">2</th>
+                                                <td>Mill 2</td>
                                                 <td>Sumatra</td>
                                                 <td>Indonesia</td>
                                                 <td>Adimulia</td>
@@ -415,8 +415,8 @@
                                                 <td>Edit</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mill 1</td>
+                                                <th scope="row">3</th>
+                                                <td>Mill 3</td>
                                                 <td>Sumatra</td>
                                                 <td>Indonesia</td>
                                                 <td>Adimulia</td>
@@ -425,8 +425,8 @@
                                                 <td>Edit</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mill 1</td>
+                                                <th scope="row">4</th>
+                                                <td>Mill 4</td>
                                                 <td>Sumatra</td>
                                                 <td>Indonesia</td>
                                                 <td>Adimulia</td>
@@ -692,7 +692,7 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Default Tabs</h5>
+                                <!-- <h5 class="card-title">Default Tabs</h5> -->
 
                                 <!-- Default Tabs -->
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -710,47 +710,65 @@
                                             <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Position</th>
-                                                <th scope="col">Age</th>
-                                                <th scope="col">Start Date</th>
+                                                <th scope="col">Supplier name</th>
+                                                <th scope="col">Region</th>
+                                                <th scope="col">Country</th>
+                                                <th scope="col">Group company</th>
+                                                <th scope="col">Type</th>
+                                                <th scope="col">RSPO Certified</th>
+                                                <th scope="col">Details</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <tr>
                                                 <th scope="row">1</th>
-                                                <td>Brandon Jacob</td>
-                                                <td>Designer</td>
-                                                <td>28</td>
-                                                <td>2016-05-25</td>
+                                                <td>Ayer Hitam Estate</td>
+                                                <td>SEAP</td>
+                                                <td>Indonesia</td>
+                                                <td>Adimulia</td>
+                                                <td>Corporate</td>
+                                                <td>Yes</td>
+                                                <td>Details</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">2</th>
-                                                <td>Bridie Kessler</td>
-                                                <td>Developer</td>
-                                                <td>35</td>
-                                                <td>2014-12-05</td>
+                                                <td>Batang Jelai Estate</td>
+                                                <td>SEAP</td>
+                                                <td>Indonesia</td>
+                                                <td>Adimulia</td>
+                                                <td>Corporate</td>
+                                                <td>Yes</td>
+                                                <td>Details</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">3</th>
-                                                <td>Ashleigh Langosh</td>
-                                                <td>Finance</td>
-                                                <td>45</td>
-                                                <td>2011-08-12</td>
+                                                <td>Gunong Petani Estate</td>
+                                                <td>SEAP</td>
+                                                <td>Indonesia</td>
+                                                <td>Adimulia</td>
+                                                <td>Corporate</td>
+                                                <td>Yes</td>
+                                                <td>Details</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">4</th>
-                                                <td>Angus Grady</td>
-                                                <td>HR</td>
-                                                <td>34</td>
-                                                <td>2012-06-11</td>
+                                                <td>Jeram Padang Estate</td>
+                                                <td>SEAP</td>
+                                                <td>Indonesia</td>
+                                                <td>Adimulia</td>
+                                                <td>Corporate</td>
+                                                <td>Yes</td>
+                                                <td>Details</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">5</th>
-                                                <td>Raheem Lehner</td>
-                                                <td>Dynamic Division Officer</td>
-                                                <td>47</td>
-                                                <td>2011-04-19</td>
+                                                <th scope="row">1</th>
+                                                <td>Estate1</td>
+                                                <td>SEAP</td>
+                                                <td>Indonesia</td>
+                                                <td>Adimulia</td>
+                                                <td>Corporate</td>
+                                                <td>Yes</td>
+                                                <td>Details</td>
                                             </tr>
                                             </tbody>
                                         </table>
