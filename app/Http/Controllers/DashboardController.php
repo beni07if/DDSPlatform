@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mill;
+use App\Models\Agriplot;
 use DB;
 
 class DashboardController extends Controller
@@ -14,6 +15,7 @@ class DashboardController extends Controller
     public function dashboard()
     {
         $millss = Mill::all();
+        $agriplots = Agriplot::all();
         $mills = DB::table('mills')
             ->count();
         $facilities = DB::table('refineries')
@@ -63,8 +65,26 @@ class DashboardController extends Controller
         ->groupBy('ndpe')
         ->get();
         $millNdpeArray = $millNdpe->toArray();
+
+        $agriplotRspoCertified = DB::table('agriplots')
+        ->select('rspo_certified', DB::raw('COUNT(*) as count'))
+        ->groupBy('rspo_certified')
+        ->get();
+        $agriplotRspoCertifiedArray = $agriplotRspoCertified->toArray();
+
+        $agriplotGroup = DB::table('agriplots')
+        ->select('group', DB::raw('COUNT(*) as count'))
+        ->groupBy('group')
+        ->get();
+        $agriplotGroupArray = $agriplotGroup->toArray();
+
+        $agriplotRegionArray = DB::table('agriplots')
+        ->select('region', DB::raw('COUNT(*) as count'))
+        ->groupBy('region')
+        ->get();
+        $agriplotRegionArrayArray = $agriplotRegionArray->toArray();
         
-        return view('dds2.dashboard', compact('millRegionArray', 'millRegionArray2', 'millTypeArray', 'millTypeArray2', 'millRspoCertifiedArray', 'millRspoCertifiedArray2', 'millNdpeArray', 'mills', 'millss', 'facilities', 'refineries'));
+        return view('dds2.dashboard', compact('millRegionArray', 'millRegionArray2', 'millTypeArray', 'millTypeArray2', 'millRspoCertifiedArray', 'millRspoCertifiedArray2', 'millNdpeArray', 'agriplotGroupArray', 'agriplotRegionArray', 'agriplotRspoCertifiedArray', 'mills', 'millss', 'facilities', 'refineries', 'agriplots'));
         
         
     }
