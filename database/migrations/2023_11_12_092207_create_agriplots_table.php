@@ -31,6 +31,9 @@ return new class extends Migration
             $table->string('risk_assessment')->nullable();
             $table->string('ghg_luc')->nullable();
             $table->string('note')->nullable();
+            $table->string('group')->nullable();
+            $table->string('region')->nullable();
+            $table->string('rspo_certified')->nullable();
             $table->string('keterangan')->nullable();
             $table->timestamps();
         });

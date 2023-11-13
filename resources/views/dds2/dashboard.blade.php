@@ -623,7 +623,7 @@
                                                 <div class="card info-card revenue-card">
 
                                                     <div class="card-body">
-                                                        <h5 class="card-title">Supplier Risk (Group)</h5>
+                                                        <h5 class="card-title">Supplier Risk</h5>
 
                                                         <!-- Doughnut Chart -->
                                                         <canvas id="doughnutChart8" style="max-height: 400px;"></canvas>
@@ -734,56 +734,18 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+                                            @foreach($agriplots as $key => $agriplot)
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Ayer Hitam Estate</td>
-                                                <td>SEAP</td>
-                                                <td>Indonesia</td>
-                                                <td>Adimulia</td>
-                                                <td>Corporate</td>
-                                                <td>Yes</td>
+                                                <td scope="row">{{ $key + 1 }}</td>
+                                                <td>{{$agriplot->estate}}</td>
+                                                <td>{{$agriplot->region}}</td>
+                                                <td>{{$agriplot->country}}</td>
+                                                <td>{{$agriplot->group}}</td>
+                                                <td>{{$agriplot->type_of_supplier}}</td>
+                                                <td>{{$agriplot->rspo_certified}}</td>
                                                 <td>Details</td>
                                             </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Batang Jelai Estate</td>
-                                                <td>SEAP</td>
-                                                <td>Indonesia</td>
-                                                <td>Adimulia</td>
-                                                <td>Corporate</td>
-                                                <td>Yes</td>
-                                                <td>Details</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Gunong Petani Estate</td>
-                                                <td>SEAP</td>
-                                                <td>Indonesia</td>
-                                                <td>Adimulia</td>
-                                                <td>Corporate</td>
-                                                <td>Yes</td>
-                                                <td>Details</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">4</th>
-                                                <td>Jeram Padang Estate</td>
-                                                <td>SEAP</td>
-                                                <td>Indonesia</td>
-                                                <td>Adimulia</td>
-                                                <td>Corporate</td>
-                                                <td>Yes</td>
-                                                <td>Details</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Estate1</td>
-                                                <td>SEAP</td>
-                                                <td>Indonesia</td>
-                                                <td>Adimulia</td>
-                                                <td>Corporate</td>
-                                                <td>Yes</td>
-                                                <td>Details</td>
-                                            </tr>
+                                            @endforeach
                                             </tbody>
                                         </table>
                                         <!-- End Table with stripped rows -->
