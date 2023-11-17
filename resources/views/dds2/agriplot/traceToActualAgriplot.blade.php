@@ -66,10 +66,10 @@
                                 <!-- Default Tabs -->
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Actual Supplier</button>
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Actual Supplier Estate</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Potential Supplier</button>
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Actual Supplier Agriplot</button>
                                     </li>
                                 </ul>
                                 <div class="tab-content pt-2" id="myTabContent">
@@ -476,7 +476,7 @@
                                                 <th scope="col">ID TTP</th>
                                                 <th scope="col">Mill</th>
                                                 <th scope="col">Trace to</th>
-                                                <th scope="col">Agriplot</th>
+                                                <th scope="col">Estate</th>
                                             </tr>
                                             </thead>
                                             <tbody>

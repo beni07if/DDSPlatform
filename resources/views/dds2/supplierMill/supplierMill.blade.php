@@ -55,8 +55,7 @@
                     <div class="card">
 
                         <div class="card-body">
-                            <h5 class="card-title">Mill supplier.. <span></span></h5>
-                            <!-- <h5 class="card-title">Recent Activity <span>| Today</span></h5> -->
+                            <!-- <h5 class="card-title">Mill supplier.. <span></span></h5> -->
                             <!-- <img src="{{ asset('asset/NiceAdmin/assets/img/maps1.png') }}" alt="" class="img-fluid"> -->
                             <iframe style="display: none;" src="//mangomap.com/inovasi-digital293/maps/a63695a6-81f2-11ee-9ba6-027d7e0bb32b?preview=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" oallowfullscreen="" msallowfullscreen="" width="100%" height="600" onload="this.style.display='block';"></iframe>
                         </div>
