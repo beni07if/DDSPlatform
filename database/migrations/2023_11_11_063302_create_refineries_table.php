@@ -13,29 +13,19 @@ return new class extends Migration
     {
         Schema::create('refineries', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('idFacility')->nullable();
-            $table->string('facility_name')->nullable();
-            $table->string('idGroup')->nullable();
-            $table->string('group_name')->nullable();
-            $table->string('facility_type')->nullable();
-            $table->string('supplier_check')->nullable();
-            $table->string('country')->nullable();
-            $table->string('province')->nullable();
-            $table->string('district')->nullable();
-            $table->string('latitude')->nullable();
-            $table->string('longitude')->nullable();
-            $table->string('address')->nullable();
-            $table->string('volume_handle')->nullable();
-            $table->string('rspoCertified')->nullable();
-            $table->string('verified')->nullable();
-            $table->string('check')->nullable();
-            $table->string('check_verified_data_consolidation')->nullable();
-            $table->string('other_certification')->nullable();
-            $table->string('ttm_available')->nullable();
-            $table->string('idUml')->nullable();
-            $table->string('note')->nullable();
-            $table->string('image')->nullable();
-            $table->string('rspo_sccs')->nullable();
+            $table->string('refinery_eq_id')->nullable();
+            $table->string('refinery_name')->nullable();
+            $table->string('refinery_company_group_id')->nullable();
+            $table->string('refinery_company_group')->nullable();
+            $table->string('refinery_country')->nullable();
+            $table->string('refinery_province')->nullable();
+            $table->string('refinery_district')->nullable();
+            $table->string('refinery_address')->nullable();
+            $table->string('refinery_type')->nullable();
+            $table->string('refinery_lat')->nullable();
+            $table->string('refinery_long')->nullable();
+            $table->string('refinery_rspo')->nullable();
+            $table->string('refinery_date_update')->nullable();
             $table->timestamps();
         });
     }

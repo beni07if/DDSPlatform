@@ -13,31 +13,17 @@ return new class extends Migration
     {
         Schema::create('ttms', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('idGroupF');
-            $table->string('groupF');
-            $table->string('idFacility');
-            $table->string('facility_name');
-            $table->string('tahun');
-            $table->string('period');
-            $table->string('facility');
-            $table->string('idMill');
-            $table->string('idUml');
+            $table->string('ttm_eq_id');
+            $table->string('user_eq_id');
+            $table->string('user_name');
+            $table->string('user_company_group_id');
+            $table->string('facility_eq_id');
+            $table->string('mill_eq_id');
+            $table->string('mill_uml_id');
             $table->string('mill_name');
-            $table->string('company_name');
-            $table->string('idGroupM');
-            $table->string('groupM');
-            $table->string('country');
-            $table->string('province');
-            $table->string('district');
-            $table->string('address');
-            $table->string('latitude');
-            $table->string('longitude');
-            $table->string('mill_type');
-            $table->string('rspo_certified');
-            $table->string('other_certified');
-            $table->string('capacity');
-            $table->string('ttp');
-            $table->string('methane_capture');
+            $table->string('ttm_source_type');
+            $table->string('ttm_year_period');
+            $table->string('ttm_date_update');
             $table->timestamps();
         });
     }
