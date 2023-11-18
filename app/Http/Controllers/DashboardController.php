@@ -93,8 +93,7 @@ class DashboardController extends Controller
         $agriplotRegionArrayArray = $agriplotRegionArray->toArray();
         
         return view('dds2.dashboard', compact('millRegionArray', 'millDeforestationRiskArray', 'millRegionArray2', 'millTypeArray', 'millTypeArray2', 'millRegionArray3', 'millRspoArray', 'millRspoArray2', 'agriplotGroupArray', 'agriplotRegionArray', 'agriplotRspoCertifiedArray', 'mills', 'millss', 'facilities', 'refineries', 'agriplots'));
-        
-        
+                
     }
     
     public function supplierMill()
@@ -125,7 +124,19 @@ class DashboardController extends Controller
         ->get();
         $millDeforestationRiskArray = $millDeforestationRisk->toArray();
         
-        return view('dds2.supplierMill.supplierMill', compact('millss', 'agriplots', 'millRegionArray', 'millTypeArray', 'millRspoArray', 'millDeforestationRiskArray'));
+        $millLegalLanduseRisk = DB::table('mills')
+        ->select('mill_legal_landuse_risk', DB::raw('COUNT(*) as count'))
+        ->groupBy('mill_legal_landuse_risk')
+        ->get();
+        $millLegalLanduseRiskArray = $millLegalLanduseRisk->toArray();
+
+        $millLegalProductionForest = DB::table('mills')
+        ->select('mill_legal_production_forest', DB::raw('COUNT(*) as count'))
+        ->groupBy('mill_legal_production_forest')
+        ->get();
+        $millLegalProductionForestArray = $millLegalProductionForest->toArray();
+        
+        return view('dds2.supplierMill.supplierMill', compact('millss', 'agriplots', 'millRegionArray', 'millTypeArray', 'millRspoArray', 'millDeforestationRiskArray', 'millLegalLanduseRiskArray', 'millLegalProductionForestArray'));
     }
 
     public function supplierMillDeforestationRisk()
@@ -252,7 +263,8 @@ class DashboardController extends Controller
         return view('dds2.supplierMill.supplierMill', compact('millss', 'agriplots', 'millRegionArray', 'millTypeArray', 'millRspoArray', 'millDeforestationRiskArray'));
     }
 
-    public function traceToActualAgriplot_(Request $request){
+    public function traceToActualAgriplot_(Request $request)
+    {
         $idMill = $request->input('mill_eq_id');
         $ttps0 = DB::table('ttps')
             ->where('mill_eq_id', $idMill)
@@ -278,53 +290,59 @@ class DashboardController extends Controller
         }
         dd($agriplots);
     }
-    
+
     public function traceToActualAgriplot(Request $request)
-    {
-        $hscodes = Hscode::select('hs_code_panjiva')->distinct()->get();
-        $reports = Report::take(3)->get();
+        {
+            $hscodes = Hscode::select('hs_code_panjiva')->distinct()->get();
+            $reports = Report::take(3)->get();
 
-        $idMill = $request->input('mill_eq_id');
-        $ttps0 = DB::table('ttps')
-            ->where('mill_eq_id', $idMill)
-            ->get();
+            $idMill = $request->input('mill_eq_id');
+            $ttps0 = DB::table('ttps')
+                ->where('mill_eq_id', $idMill)
+                ->get();
 
-        $mill_eq_id = $request->input('mill_eq_id');
+            $mill_eq_id = $request->input('mill_eq_id');
 
-        // Retrieve Ttps for the selected mill_eq_id
-        $ttps = Ttp::where('mill_eq_id', $mill_eq_id)->get();
-        $ttps2 = Ttp::where('mill_eq_id', $mill_eq_id)->get();
+            // Retrieve Ttps for the selected mill_eq_id
+            $ttps = Ttp::where('mill_eq_id', $mill_eq_id)->get();
+            $ttps2 = Ttp::where('mill_eq_id', $mill_eq_id)->get();
 
-        // Retrieve Mill based on mill_eq_id
-        $mill = Mill::where('mill_eq_id', $mill_eq_id)->first();
+            // Retrieve Mill based on mill_eq_id
+            $mill = Mill::where('mill_eq_id', $mill_eq_id)->first();
 
-        if (!$mill) {
-            // Handle the case where Mill is not found based on the provided mill_eq_id
-            // You can redirect or display an error message
-            return redirect()->route('home')->with('error', 'Mill not found');
-        }
+            if (!$mill) {
+                // Handle the case where Mill is not found based on the provided mill_eq_id
+                // You can redirect or display an error message
+                return redirect()->route('home')->with('error', 'Mill not found');
+            }
 
-        // Retrieve Estates for the selected mill_eq_id
-        $estates = $mill->estates;
+            // Retrieve Estates for the selected mill_eq_id
+            $estates = $mill->estates;
 
-        // Retrieve Agriplots for the selected mill_eq_id and count deforestation risks
-        $agriplots = collect();
-        foreach ($estates as $estate) {
-            $agriplots->push($estate->agriplots()->withRiskCount()->get());
-        }
+            // Retrieve Agriplots for the selected mill_eq_id and count deforestation risks
+            $agriplots = collect();
+            foreach ($estates as $estate) {
+                $agriplots->push($estate->agriplots()->withRiskCount()->get());
+            }
 
-        // ... rest of your code
-        $millRegion = DB::table('mills')
+            // ... rest of your code
+            $millRegion = DB::table('mills')
             ->select('mill_country', DB::raw('COUNT(*) as count'))
             ->groupBy('mill_country')
             ->get();
             $millRegionArray = $millRegion->toArray();
 
-            $millType = DB::table('mills')
-            ->select('mill_type', DB::raw('COUNT(*) as count'))
-            ->groupBy('mill_type')
+            $millRegion2 = DB::table('mills')
+            ->select('mill_country', DB::raw('COUNT(*) as count'))
+            ->groupBy('mill_country')
             ->get();
-            $millTypeArray = $millType->toArray();
+            $millRegion2Array = $millRegion2->toArray();
+
+            $millRegion3 = DB::table('mills')
+            ->select('mill_country', DB::raw('COUNT(*) as count'))
+            ->groupBy('mill_country')
+            ->get();
+            $millRegion3Array = $millRegion3->toArray();
 
             $millRspo = DB::table('mills')
             ->select('mill_rspo', DB::raw('COUNT(*) as count'))
@@ -332,13 +350,55 @@ class DashboardController extends Controller
             ->get();
             $millRspoArray = $millRspo->toArray();
 
+            $millRspo2 = DB::table('mills')
+            ->select('mill_rspo', DB::raw('COUNT(*) as count'))
+            ->groupBy('mill_rspo')
+            ->get();
+            $millRspo2Array = $millRspo2->toArray();
+
+            $millRspo3 = DB::table('mills')
+            ->select('mill_rspo', DB::raw('COUNT(*) as count'))
+            ->groupBy('mill_rspo')
+            ->get();
+            $millRspo3Array = $millRspo3->toArray();
+
             $millDeforestationRisk = DB::table('mills')
             ->select('mill_deforestation_risk', DB::raw('COUNT(*) as count'))
             ->groupBy('mill_deforestation_risk')
             ->get();
             $millDeforestationRiskArray = $millDeforestationRisk->toArray();
 
-        return view('dds2.agriplot.traceToActualAgriplot', compact('hscodes', 'agriplots', 'reports', 'ttps', 'ttps2', 'ttps0', 'millRegionArray', 'millTypeArray', 'millRspoArray', 'millDeforestationRiskArray'));
+            $millDeforestationRisk2 = DB::table('mills')
+            ->select('mill_deforestation_risk', DB::raw('COUNT(*) as count'))
+            ->groupBy('mill_deforestation_risk')
+            ->get();
+            $millDeforestationRisk2Array = $millDeforestationRisk2->toArray();
+
+            $millDeforestationRisk3 = DB::table('mills')
+            ->select('mill_deforestation_risk', DB::raw('COUNT(*) as count'))
+            ->groupBy('mill_deforestation_risk')
+            ->get();
+            $millDeforestationRisk3Array = $millDeforestationRisk3->toArray();
+            
+            $millLegalProductionForest = DB::table('mills')
+            ->select('mill_legal_production_forest', DB::raw('COUNT(*) as count'))
+            ->groupBy('mill_legal_production_forest')
+            ->get();
+            $millLegalProductionForestArray = $millLegalProductionForest->toArray();
+
+            $millLegalProductionForest2 = DB::table('mills')
+            ->select('mill_legal_production_forest', DB::raw('COUNT(*) as count'))
+            ->groupBy('mill_legal_production_forest')
+            ->get();
+            $millLegalProductionForest2Array = $millLegalProductionForest2->toArray();
+
+            $millLegalProductionForest3 = DB::table('mills')
+            ->select('mill_legal_production_forest', DB::raw('COUNT(*) as count'))
+            ->groupBy('mill_legal_production_forest')
+            ->get();
+            $millLegalProductionForest3Array = $millLegalProductionForest3->toArray();
+
+        return view('dds2.agriplot.traceToActualAgriplot', compact('hscodes', 'agriplots', 'reports', 'ttps', 'ttps2', 'ttps0', 'millRegionArray', 'millRegion2Array', 'millRegion3Array', 'millRspoArray', 'millRspo2Array', 'millRspo3Array', 'millDeforestationRiskArray', 'millDeforestationRisk2Array', 'millDeforestationRisk3Array', 'millLegalProductionForestArray', 'millLegalProductionForest2Array', 'millLegalProductionForest3Array'));
         
     }
 

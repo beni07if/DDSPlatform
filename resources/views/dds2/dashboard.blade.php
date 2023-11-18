@@ -78,7 +78,7 @@
                             <div class="card info-card revenue-card">
 
                             <div class="card-body">
-                                <h5 class="card-title">Refinery supplier <span></span></h5>
+                                <h5 class="card-title">Refinery suppliers <span></span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -100,7 +100,7 @@
                             <div class="card info-card sales-card">
 
                             <div class="card-body">
-                                <h5 class="card-title">Mill supplier <span></span></h5>
+                                <h5 class="card-title">Mill suppliers <span></span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -122,7 +122,7 @@
                             <div class="card info-card revenue-card">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Supplybase region</h5>
+                                    <h5 class="card-title">Supplybase Region<p class="text-muted">(Mill)</p></h5>
 
                                     <!-- Doughnut Chart -->
                                     <canvas id="doughnutChart" style="max-height: 400px;"></canvas>
@@ -218,7 +218,7 @@
                             <div class="card info-card revenue-card">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Supplier Type</h5>
+                                    <h5 class="card-title">Supplier Type<p class="text-muted">(Mill)</p></h5>
 
                                     <!-- Doughnut Chart -->
                                     <canvas id="doughnutChart2" style="max-height: 400px;">
@@ -316,7 +316,7 @@
                             <div class="card info-card revenue-card">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">RSPO Certified</h5>
+                                    <h5 class="card-title">RSPO Certified<p class="text-muted">(Mill)</p></h5>
 
                                     <!-- Doughnut Chart -->
                                     <canvas id="doughnutChart3" style="max-height: 400px;"></canvas>

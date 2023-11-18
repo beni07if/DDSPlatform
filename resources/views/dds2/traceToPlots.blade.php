@@ -96,7 +96,7 @@
                                                     <td>{{$agriplot->agriplot_company_group}}</td>
                                                     <td>{{$agriplot->agriplot_type}}</td>
                                                     <td>{{$agriplot->agriplot_rspo}}</td>
-                                                    <td><a href="">Details</a></td>
+                                                    <td><a href="#">Details</a></td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

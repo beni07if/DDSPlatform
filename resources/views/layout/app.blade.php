@@ -51,7 +51,7 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#services">Features</a></li>
           <li><a class="nav-link scrollto" href="#features">About</a></li>
-          <li><a class="nav-link scrollto" href="#features2">News</a></li>
+          <li><a class="nav-link scrollto" href="#features2">Comodity</a></li>
           <li><a class="nav-link scrollto" href="#testimonials">Testimonial</a></li>
           <li><a class="nav-link scrollto" href="{{route('dashboard')}}" target="_blank">Login</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -302,12 +302,12 @@
 
         <div class="row feature-item">
             <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0" data-aos="fade-left" data-aos-delay="150">
-                <h1><b>AGRIPLOT INTRODUCTION</b></h1>
+                <h1><b>DDS INOVASI AGRIPLOT</b></h1>
                 <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatiis.
+                    To adhere to current and forthcoming regulations in the palm oil trading industry, industry players must surmount several challenges to maintain their competitiveness and global engagement. 
                 </p>
                 <p>
-                    Ut auctor gravida nulla. Nam id erat elementum, accumsan dui non, porttitor lorem.
+                    inovasi Digital is dedicated to offering solutions through our due diligence system, known as Inovasi Agriplot, which constitutes a comprehensive package designed to effectively address international directives' due diliegence concerns.
                 </p>
             </div>
             <!-- <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
@@ -809,44 +809,33 @@
 
                 <div class="swiper-slide">
                   <div class="testimonial-item">
-                    <img src="{{ asset('asset/Rapid/assets/img/testimonial-1.jpg') }}" class="testimonial-img" alt="">
-                    <h3>Saul Goodman</h3>
-                    <h4>Ceo &amp; Founder</h4>
+                    <img src="{{ asset('asset/Rapid/assets/img/user-testimonials.png') }}" class="testimonial-img" alt="">
+                    <h3>Iswari Nallisamy - Sime Darby Plantation/Sime Darby Oils</h3>
+                    <h4>Lead, Supplier Monitoring & Grievance</h4>
                     <p>
-                      Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                      ...
                     </p>
                   </div>
                 </div><!-- End testimonial item -->
 
                 <div class="swiper-slide">
                   <div class="testimonial-item">
-                    <img src="{{ asset('asset/Rapid/assets/img/testimonial-2.jpg') }}" class="testimonial-img" alt="">
-                    <h3>Sara Wilsson</h3>
-                    <h4>Designer</h4>
+                    <img src="{{ asset('asset/Rapid/assets/img/user-testimonials.png') }}" class="testimonial-img" alt="">
+                    <h3>Wong Kok Seng - Fuji Oil</h3>
+                    <h4>Sustainability Manager</h4>
                     <p>
-                      Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                      ...
                     </p>
                   </div>
                 </div><!-- End testimonial item -->
 
                 <div class="swiper-slide">
                   <div class="testimonial-item">
-                    <img src="{{ asset('asset/Rapid/assets/img/testimonial-3.jpg') }}" class="testimonial-img" alt="">
-                    <h3>Jena Karlis</h3>
-                    <h4>Store Owner</h4>
+                    <img src="{{ asset('asset/Rapid/assets/img/user-testimonials.png') }}" class="testimonial-img" alt="">
+                    <h3>Amin - BGA</h3>
+                    <h4>Manager</h4>
                     <p>
-                      Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                    </p>
-                  </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <img src="{{ asset('asset/Rapid/assets/img/testimonial-4.jpg') }}" class="testimonial-img" alt="">
-                    <h3>Matt Brandon</h3>
-                    <h4>Freelancer</h4>
-                    <p>
-                      Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                      ...
                     </p>
                   </div>
                 </div><!-- End testimonial item -->
@@ -975,7 +964,7 @@
     <!-- End Clients Section -->
 
     <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing section-bg wow fadeInUp">
+    <section id="pricing" class="pricing section-bg wow fadeInUp" hidden>
 
       <div class="container" data-aos="fade-up">
 
@@ -1061,7 +1050,7 @@
     </section><!-- End Pricing Section -->
 
     <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq">
+    <section id="faq" class="faq" hidden>
       <div class="container" data-aos="fade-up">
         <header class="section-header">
           <h3>Frequently Asked Questions</h3>

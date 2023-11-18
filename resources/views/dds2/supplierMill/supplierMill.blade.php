@@ -221,7 +221,7 @@
                                                 <div class="card info-card revenue-card">
 
                                                     <div class="card-body">
-                                                        <h5 class="card-title">Supplier Type</h5>
+                                                        <h5 class="card-title">RSPO Suppliers</h5>
 
                                                         <!-- Doughnut Chart -->
                                                         <canvas id="doughnutChart2" style="max-height: 400px;">
@@ -229,23 +229,23 @@
                                                         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                                                         <script>
                                                             document.addEventListener("DOMContentLoaded", () => {
-                                                                let millTypeArray = @json($millTypeArray);
+                                                                let millRspoArray = @json($millRspoArray);
 
-                                                                // Sort millTypeArray based on count in descending order
-                                                                millTypeArray.sort((a, b) => b.count - a.count);
+                                                                // Sort millRspoArray based on count in descending order
+                                                                millRspoArray.sort((a, b) => b.count - a.count);
 
                                                                 // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                                let topLabelsForLegend = millTypeArray.slice(0, 4).map(item => item.mill_type);
+                                                                let topLabelsForLegend = millRspoArray.slice(0, 4).map(item => item.mill_rspo);
 
-                                                                let labels = millTypeArray.map(item => item.mill_type);
-                                                                let dataCounts = millTypeArray.map(item => item.count);
+                                                                let labels = millRspoArray.map(item => item.mill_rspo);
+                                                                let dataCounts = millRspoArray.map(item => item.count);
 
                                                                 // Define specific colors for Indonesia and Malaysia
                                                                 let specificColors = {
-                                                                    'Manage by Plantation': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                                    'Independent Mill': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                                    'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                                    'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                                    'No': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                                    'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                                    'IP': 'rgb(62, 250, 153)', // Blue for Thailand
+                                                                    'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
                                                                     // Add more specific colors for other countries as needed
                                                                 };
 
@@ -320,29 +320,29 @@
                                                 <div class="card info-card revenue-card">
 
                                                     <div class="card-body">
-                                                        <h5 class="card-title">RSPO Certified</h5>
+                                                        <h5 class="card-title">Deforestation Risk</h5>
 
                                                         <!-- Doughnut Chart -->
                                                         <canvas id="doughnutChart3" style="max-height: 400px;"></canvas>
                                                         <script>
                                                             document.addEventListener("DOMContentLoaded", () => {
-                                                                let millRspoArray = @json($millRspoArray);
+                                                                let millDeforestationRiskArray = @json($millDeforestationRiskArray);
 
-                                                                // Sort millRspoArray based on count in descending order
-                                                                millRspoArray.sort((a, b) => b.count - a.count);
+                                                                // Sort millDeforestationRiskArray based on count in descending order
+                                                                millDeforestationRiskArray.sort((a, b) => b.count - a.count);
 
                                                                 // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                                let topLabelsForLegend = millRspoArray.slice(0, 4).map(item => item.mill_rspo);
+                                                                let topLabelsForLegend = millDeforestationRiskArray.slice(0, 4).map(item => item.mill_deforestation_risk);
 
-                                                                let labels = millRspoArray.map(item => item.mill_rspo);
-                                                                let dataCounts = millRspoArray.map(item => item.count);
+                                                                let labels = millDeforestationRiskArray.map(item => item.mill_deforestation_risk);
+                                                                let dataCounts = millDeforestationRiskArray.map(item => item.count);
 
                                                                 // Define specific colors for Indonesia and Malaysia
                                                                 let specificColors = {
-                                                                    'No': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                                    'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                                    'IP': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                                    'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                                    'Not yet verified': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                                    'No Risk': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                                    'Low Risk': 'rgb(62, 250, 153)', // Blue for Thailand
+                                                                    'Hight Risk': 'rgb(46, 139, 87)',  // Blue for Colombia
                                                                     // Add more specific colors for other countries as needed
                                                                 };
 
@@ -416,29 +416,29 @@
                                                 <div class="card info-card revenue-card">
 
                                                     <div class="card-body">
-                                                        <h5 class="card-title">Supplier Risk</h5>
+                                                        <h5 class="card-title">Legal Production Forest</h5>
 
                                                         <!-- Doughnut Chart -->
                                                         <canvas id="doughnutChart4" style="max-height: 400px;"></canvas>
                                                         <script>
                                                             document.addEventListener("DOMContentLoaded", () => {
-                                                                let millDeforestationRiskArray = @json($millDeforestationRiskArray);
+                                                                let millLegalProductionForestArray = @json($millLegalProductionForestArray);
 
-                                                                // Sort millDeforestationRiskArray based on count in descending order
-                                                                millDeforestationRiskArray.sort((a, b) => b.count - a.count);
+                                                                // Sort millLegalProductionForestArray based on count in descending order
+                                                                millLegalProductionForestArray.sort((a, b) => b.count - a.count);
 
                                                                 // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                                let topLabelsForLegend = millDeforestationRiskArray.slice(0, 4).map(item => item.mill_deforestation_risk);
+                                                                let topLabelsForLegend = millLegalProductionForestArray.slice(0, 4).map(item => item.mill_legal_production_forest);
 
-                                                                let labels = millDeforestationRiskArray.map(item => item.mill_deforestation_risk);
-                                                                let dataCounts = millDeforestationRiskArray.map(item => item.count);
+                                                                let labels = millLegalProductionForestArray.map(item => item.mill_legal_production_forest);
+                                                                let dataCounts = millLegalProductionForestArray.map(item => item.count);
 
                                                                 // Define specific colors for Indonesia and Malaysia
                                                                 let specificColors = {
-                                                                    '': 'rgb(192, 192, 192)', // Green for Indonesia
-                                                                    'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                                    'IP': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                                    'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                                    'Not yet verified': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                                    'Low Risk': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                                    'Hight Risk': 'rgb(62, 250, 153)', // Blue for Thailand
+                                                                    'No Risk': 'rgb(46, 139, 87)',  // Blue for Colombia
                                                                     // Add more specific colors for other countries as needed
                                                                 };
 
