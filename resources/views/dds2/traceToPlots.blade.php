@@ -56,7 +56,7 @@
 
                         <div class="card-body">
                             <!-- <h5 class="card-title">Agriplot supplier.. <span></span></h5> -->
-                            <iframe style="display: none;" src="//mangomap.com/inovasi-digital293/maps/a63695a6-81f2-11ee-9ba6-027d7e0bb32b?preview=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" oallowfullscreen="" msallowfullscreen="" width="100%" height="600" onload="this.style.display='block';"></iframe>
+                            <iframe style="display: none;" src="//mangomap.com/inovasi-digital293/maps/81a6dbb6-8601-11ee-be0b-027d7e0bb32b?preview=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" oallowfullscreen="" msallowfullscreen="" width="100%" height="600" onload="this.style.display='block';"></iframe>
                         </div>
 
                         <div class="card">
