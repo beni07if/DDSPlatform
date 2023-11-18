@@ -57,7 +57,7 @@
                         <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button> -->
                         
                         <!-- Sales Card -->
-                        <div class="col-xxl-4 col-md-4" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-facilities" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                        <div class="col-xxl-4 col-md-4 nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-facilities" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                             <div class="card info-card sales-card">
 
                             <div class="card-body">
@@ -79,7 +79,7 @@
                         </div><!-- End Sales Card -->
 
                         <!-- Revenue Card -->
-                        <div class="col-xxl-4 col-md-4" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-refinery" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                        <div class="col-xxl-4 col-md-4 nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-refinery" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
                             <div class="card info-card revenue-card">
 
                             <div class="card-body">
@@ -101,7 +101,7 @@
                         </div><!-- End Revenue Card -->
 
                         <!-- Sales Card -->
-                        <div class="col-xxl-4 col-md-4" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mills" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                        <div class="col-xxl-4 col-md-4 nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mills" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                             <div class="card info-card sales-card">
 
                             <div class="card-body">
@@ -144,7 +144,7 @@
                                                     millRegionArray.sort((a, b) => b.count - a.count);
 
                                                     // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                    let topLabelsForLegend = millRegionArray.slice(0, 4).map(item => item.mill_country);
+                                                    let topLabelsForLegend = millRegionArray.slice(0, 2).map(item => item.mill_country);
 
                                                     let labels = millRegionArray.map(item => item.mill_country);
                                                     let dataCounts = millRegionArray.map(item => item.count);
@@ -153,8 +153,6 @@
                                                     let specificColors = {
                                                         'Indonesia': 'rgb(47, 79, 79)', // Green for Indonesia
                                                         'Malaysia': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                        'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                        'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
                                                         // Add more specific colors for other countries as needed
                                                     };
 
@@ -241,7 +239,7 @@
                                                     millTypeArray.sort((a, b) => b.count - a.count);
 
                                                     // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                    let topLabelsForLegend = millTypeArray.slice(0, 4).map(item => item.mill_type);
+                                                    let topLabelsForLegend = millTypeArray.slice(0, 2).map(item => item.mill_type);
 
                                                     let labels = millTypeArray.map(item => item.mill_type);
                                                     let dataCounts = millTypeArray.map(item => item.count);
@@ -250,8 +248,6 @@
                                                     let specificColors = {
                                                         'Manage by Plantation': 'rgb(47, 79, 79)', // Green for Indonesia
                                                         'Independent Mill': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                        'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                        'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
                                                         // Add more specific colors for other countries as needed
                                                     };
 
@@ -338,7 +334,7 @@
                                                     millRspoArray.sort((a, b) => b.count - a.count);
 
                                                     // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                    let topLabelsForLegend = millRspoArray.slice(0, 4).map(item => item.mill_rspo);
+                                                    let topLabelsForLegend = millRspoArray.slice(0, 2).map(item => item.mill_rspo);
 
                                                     let labels = millRspoArray.map(item => item.mill_rspo);
                                                     let dataCounts = millRspoArray.map(item => item.count);
@@ -347,8 +343,6 @@
                                                     let specificColors = {
                                                         'No': 'rgb(47, 79, 79)', // Green for Indonesia
                                                         'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                        'IP': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                        'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
                                                         // Add more specific colors for other countries as needed
                                                     };
 
@@ -428,7 +422,7 @@
                                             <h5 class="card-title">Supplybase Region</h5>
 
                                             <!-- Doughnut Chart -->
-                                            <canvas id="doughnutChar5" style="max-height: 400px;"></canvas>
+                                            <canvas id="doughnutChart4" style="max-height: 400px;"></canvas>
                                             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                                             <script>
                                                 document.addEventListener("DOMContentLoaded", () => {
@@ -438,7 +432,7 @@
                                                     refineryRegionArray.sort((a, b) => b.count - a.count);
 
                                                     // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                    let topLabelsForLegend = refineryRegionArray.slice(0, 4).map(item => item.refinery_country);
+                                                    let topLabelsForLegend = refineryRegionArray.slice(0, 2).map(item => item.refinery_country);
 
                                                     let labels = refineryRegionArray.map(item => item.refinery_country);
                                                     let dataCounts = refineryRegionArray.map(item => item.count);
@@ -447,8 +441,6 @@
                                                     let specificColors = {
                                                         'Indonesia': 'rgb(47, 79, 79)', // Green for Indonesia
                                                         'Malaysia': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                        'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                        'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
                                                         // Add more specific colors for other countries as needed
                                                     };
 
@@ -465,7 +457,7 @@
                                                     // Combine specific colors with random colors
                                                     let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
 
-                                                    new Chart(document.getElementById('doughnutChart5'), {
+                                                    new Chart(document.getElementById('doughnutChart4'), {
                                                         type: 'doughnut',
                                                         data: {
                                                             labels: labels,
@@ -510,7 +502,7 @@
                                                     });
                                                 });
                                             </script>
-                                            <!-- End Doughnut Chart -->
+                                            <!-- End Doughnut CHart -->
                                         </div>
 
                                     </div>
@@ -535,17 +527,15 @@
                                                     refineryTypeArray.sort((a, b) => b.count - a.count);
 
                                                     // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                    let topLabelsForLegend = refineryTypeArray.slice(0, 4).map(item => item.refinery_type);
+                                                    let topLabelsForLegend = refineryTypeArray.slice(0, 2).map(item => item.refinery_type);
 
                                                     let labels = refineryTypeArray.map(item => item.refinery_type);
                                                     let dataCounts = refineryTypeArray.map(item => item.count);
 
                                                     // Define specific colors for Indonesia and Malaysia
                                                     let specificColors = {
-                                                        'Manage by Plantation': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                        'Independent Mill': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                        'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                        'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        'Refinery': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'KCP': 'rgb(43, 188, 144)', // Blue for Malaysia
                                                         // Add more specific colors for other countries as needed
                                                     };
 
@@ -632,17 +622,15 @@
                                                     refineryRspoArray.sort((a, b) => b.count - a.count);
 
                                                     // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                    let topLabelsForLegend = refineryRspoArray.slice(0, 4).map(item => item.refinery_type);
+                                                    let topLabelsForLegend = refineryRspoArray.slice(0, 2).map(item => item.refinery_rspo);
 
-                                                    let labels = refineryRspoArray.map(item => item.refinery_type);
+                                                    let labels = refineryRspoArray.map(item => item.refinery_rspo);
                                                     let dataCounts = refineryRspoArray.map(item => item.count);
 
                                                     // Define specific colors for Indonesia and Malaysia
                                                     let specificColors = {
-                                                        'No': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                        'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                        'IP': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                        'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        '': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'RSPO': 'rgb(43, 188, 144)', // Blue for Malaysia
                                                         // Add more specific colors for other countries as needed
                                                     };
 
@@ -722,7 +710,7 @@
                                             <h5 class="card-title">Supplybase Region</h5>
 
                                             <!-- Doughnut Chart -->
-                                            <canvas id="doughnutChar7" style="max-height: 400px;"></canvas>
+                                            <canvas id="doughnutChart7" style="max-height: 400px;"></canvas>
                                             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                                             <script>
                                                 document.addEventListener("DOMContentLoaded", () => {
@@ -732,17 +720,15 @@
                                                     facilitiesRegionArray.sort((a, b) => b.count - a.count);
 
                                                     // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                    let topLabelsForLegend = facilitiesRegionArray.slice(0, 4).map(item => item.facilities_country);
+                                                    let topLabelsForLegend = facilitiesRegionArray.slice(0, 2).map(item => item.facilities_country);
 
                                                     let labels = facilitiesRegionArray.map(item => item.facilities_country);
                                                     let dataCounts = facilitiesRegionArray.map(item => item.count);
 
                                                     // Define specific colors for Indonesia and Malaysia
                                                     let specificColors = {
-                                                        'Indonesia': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                        'Malaysia': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                        'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                        'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        'Malaysia': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'United States': 'rgb(43, 188, 144)', // Blue for Malaysia
                                                         // Add more specific colors for other countries as needed
                                                     };
 
@@ -829,17 +815,15 @@
                                                     facilitiesTypeArray.sort((a, b) => b.count - a.count);
 
                                                     // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                    let topLabelsForLegend = facilitiesTypeArray.slice(0, 4).map(item => item.facilities_type);
+                                                    let topLabelsForLegend = facilitiesTypeArray.slice(0, 2).map(item => item.facilities_type);
 
                                                     let labels = facilitiesTypeArray.map(item => item.facilities_type);
                                                     let dataCounts = facilitiesTypeArray.map(item => item.count);
 
                                                     // Define specific colors for Indonesia and Malaysia
                                                     let specificColors = {
-                                                        'Manage by Plantation': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                        'Independent Mill': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                        'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                        'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        'Manufacture': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'Oleochemical': 'rgb(43, 188, 144)', // Blue for Malaysia
                                                         // Add more specific colors for other countries as needed
                                                     };
 
@@ -926,17 +910,15 @@
                                                     facilitiesRspoArray.sort((a, b) => b.count - a.count);
 
                                                     // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                    let topLabelsForLegend = facilitiesRspoArray.slice(0, 4).map(item => item.facilities_rspo);
+                                                    let topLabelsForLegend = facilitiesRspoArray.slice(0, 2).map(item => item.facilities_rspo);
 
                                                     let labels = facilitiesRspoArray.map(item => item.facilities_rspo);
                                                     let dataCounts = facilitiesRspoArray.map(item => item.count);
 
                                                     // Define specific colors for Indonesia and Malaysia
                                                     let specificColors = {
-                                                        'No': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                        'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                        'IP': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                        'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        '': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'RSPO - MB': 'rgb(43, 188, 144)', // Blue for Malaysia
                                                         // Add more specific colors for other countries as needed
                                                     };
 

@@ -71,8 +71,8 @@ class DashboardController extends Controller
         $millRspoArray = $millRspo->toArray();
 
         $refineryRspo = DB::table('refineries')
-        ->select('refinery_type', DB::raw('COUNT(*) as count'))
-        ->groupBy('refinery_type')
+        ->select('refinery_rspo', DB::raw('COUNT(*) as count'))
+        ->groupBy('refinery_rspo')
         ->get();
         $refineryRspoArray = $refineryRspo->toArray();
 
