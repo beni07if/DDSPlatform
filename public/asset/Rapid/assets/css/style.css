@@ -432,14 +432,14 @@ h6 {
 }
 
 #hero .intro-info h2 {
-  color: #413e66;
+  color: #00BBC9;
   margin-bottom: 40px;
   font-size: 48px;
   font-weight: 700;
 }
 
 #hero .intro-info h2 span {
-  color: #1bb1dc;
+  color: #7FC447;
 }
 
 @media (max-width: 991px) {
