@@ -99,7 +99,7 @@
         </div>
 
         <div class="col-lg-6 intro-img order-lg-last order-first" data-aos="zoom-out" data-aos-delay="200">
-          <img src="{{ asset('asset/Rapid/assets/img/intro-img.svg') }}" alt="" class="img-fluid">
+          <img src="{{ asset('asset/Rapid/assets/img/ilustrasi4.png') }}" alt="" class="img-fluid">
         </div>
       </div>
 
