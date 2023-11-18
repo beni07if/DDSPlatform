@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mill;
+use App\Models\Refinery;
+use App\Models\Facility;
 use App\Models\Agriplot;
 use App\Models\Hscode;
 use App\Models\Report;
@@ -32,17 +34,17 @@ class DashboardController extends Controller
         ->get();
         $millRegionArray = $millRegion->toArray();
 
-        $millRegion2 = DB::table('mills')
-        ->select('mill_country', DB::raw('COUNT(*) as count'))
-        ->groupBy('mill_country')
+        $refineryRegion = DB::table('refineries')
+        ->select('refinery_country', DB::raw('COUNT(*) as count'))
+        ->groupBy('refinery_country')
         ->get();
-        $millRegionArray2 = $millRegion2->toArray();
+        $refineryRegionArray = $refineryRegion->toArray();
 
-        $millRegion3 = DB::table('mills')
-        ->select('mill_country', DB::raw('COUNT(*) as count'))
-        ->groupBy('mill_country')
+        $facilitiesRegionArray = DB::table('facilities')
+        ->select('facilities_country', DB::raw('COUNT(*) as count'))
+        ->groupBy('facilities_country')
         ->get();
-        $millRegionArray3 = $millRegion3->toArray();
+        $facilitiesRegionArrayArray = $facilitiesRegionArray->toArray();
 
         $millType = DB::table('mills')
         ->select('mill_type', DB::raw('COUNT(*) as count'))
@@ -50,11 +52,17 @@ class DashboardController extends Controller
         ->get();
         $millTypeArray = $millType->toArray();
 
-        $millType2 = DB::table('mills')
-        ->select('mill_type', DB::raw('COUNT(*) as count'))
-        ->groupBy('mill_type')
+        $refineryType = DB::table('refineries')
+        ->select('refinery_type', DB::raw('COUNT(*) as count'))
+        ->groupBy('refinery_type')
         ->get();
-        $millTypeArray2 = $millType2->toArray();
+        $refineryTypeArray = $refineryType->toArray();
+
+        $facilitiesType = DB::table('facilities')
+        ->select('facilities_type', DB::raw('COUNT(*) as count'))
+        ->groupBy('facilities_type')
+        ->get();
+        $facilitiesTypeArray = $facilitiesType->toArray();
 
         $millRspo = DB::table('mills')
         ->select('mill_rspo', DB::raw('COUNT(*) as count'))
@@ -62,37 +70,19 @@ class DashboardController extends Controller
         ->get();
         $millRspoArray = $millRspo->toArray();
 
-        $millRspo2 = DB::table('mills')
-        ->select('mill_rspo', DB::raw('COUNT(*) as count'))
-        ->groupBy('mill_rspo')
+        $refineryRspo = DB::table('refineries')
+        ->select('refinery_type', DB::raw('COUNT(*) as count'))
+        ->groupBy('refinery_type')
         ->get();
-        $millRspoArray2 = $millRspo2->toArray();
+        $refineryRspoArray = $refineryRspo->toArray();
 
-        $millDeforestationRisk = DB::table('mills')
-        ->select('mill_deforestation_risk', DB::raw('COUNT(*) as count'))
-        ->groupBy('mill_deforestation_risk')
+        $facilitiesRspo = DB::table('facilities')
+        ->select('facilities_rspo', DB::raw('COUNT(*) as count'))
+        ->groupBy('facilities_rspo')
         ->get();
-        $millDeforestationRiskArray = $millDeforestationRisk->toArray();
-
-        $agriplotRspoCertified = DB::table('agriplots')
-        ->select('agriplot_rspo', DB::raw('COUNT(*) as count'))
-        ->groupBy('agriplot_rspo')
-        ->get();
-        $agriplotRspoCertifiedArray = $agriplotRspoCertified->toArray();
-
-        $agriplotGroup = DB::table('agriplots')
-        ->select('agriplot_company_group', DB::raw('COUNT(*) as count'))
-        ->groupBy('agriplot_company_group')
-        ->get();
-        $agriplotGroupArray = $agriplotGroup->toArray();
-
-        $agriplotRegionArray = DB::table('agriplots')
-        ->select('agriplot_country', DB::raw('COUNT(*) as count'))
-        ->groupBy('agriplot_country')
-        ->get();
-        $agriplotRegionArrayArray = $agriplotRegionArray->toArray();
+        $facilitiesRspoArray = $facilitiesRspo->toArray();
         
-        return view('dds2.dashboard', compact('millRegionArray', 'millDeforestationRiskArray', 'millRegionArray2', 'millTypeArray', 'millTypeArray2', 'millRegionArray3', 'millRspoArray', 'millRspoArray2', 'agriplotGroupArray', 'agriplotRegionArray', 'agriplotRspoCertifiedArray', 'mills', 'millss', 'facilities', 'refineries', 'agriplots'));
+        return view('dds2.dashboard', compact('mills', 'facilities', 'refineries', 'millRegionArray', 'refineryRegionArray', 'facilitiesRegionArray', 'millTypeArray', 'refineryTypeArray', 'facilitiesTypeArray', 'millRspoArray', 'refineryRspoArray', 'facilitiesRspoArray' ));
                 
     }
     

@@ -45,14 +45,19 @@
             </nav>
         </div>
 
-        <div class="row">
-            <div class="tab-content pt-2" id="myTabContent">
-                    <!-- Left side columns -->
-                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"></h5>
 
-                    <div class="row">
+                <!-- Vertical Pills Tabs -->
+                <div class="d-flex align-items-start">
+                    <div class="nav flex-row nav-pills me-3 col-xxl-6 col-md-6" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <!-- <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+                        <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button> -->
+                        
                         <!-- Sales Card -->
-                        <div class="col-xxl-2 col-md-2">
+                        <div class="col-xxl-4 col-md-4" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-facilities" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                             <div class="card info-card sales-card">
 
                             <div class="card-body">
@@ -74,7 +79,7 @@
                         </div><!-- End Sales Card -->
 
                         <!-- Revenue Card -->
-                        <div class="col-xxl-2 col-md-2">
+                        <div class="col-xxl-4 col-md-4" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-refinery" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
                             <div class="card info-card revenue-card">
 
                             <div class="card-body">
@@ -96,7 +101,7 @@
                         </div><!-- End Revenue Card -->
 
                         <!-- Sales Card -->
-                        <div class="col-xxl-2 col-md-2">
+                        <div class="col-xxl-4 col-md-4" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mills" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                             <div class="card info-card sales-card">
 
                             <div class="card-body">
@@ -116,1206 +121,909 @@
 
                             </div>
                         </div><!-- End Sales Card -->
-
-                        <!-- Revenue Card -->
-                        <div class="col-xxl-2 col-md-2">
-                            <div class="card info-card revenue-card">
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Supplybase Region<p class="text-muted">(Mill)</p></h5>
-
-                                    <!-- Doughnut Chart -->
-                                    <canvas id="doughnutChart" style="max-height: 400px;"></canvas>
-                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                    <script>
-                                        document.addEventListener("DOMContentLoaded", () => {
-                                            let millRegionArray = @json($millRegionArray);
-
-                                            // Sort millRegionArray based on count in descending order
-                                            millRegionArray.sort((a, b) => b.count - a.count);
-
-                                            // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                            let topLabelsForLegend = millRegionArray.slice(0, 4).map(item => item.mill_country);
-
-                                            let labels = millRegionArray.map(item => item.mill_country);
-                                            let dataCounts = millRegionArray.map(item => item.count);
-
-                                            // Define specific colors for Indonesia and Malaysia
-                                            let specificColors = {
-                                                'Indonesia': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                'Malaysia': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
-                                                // Add more specific colors for other countries as needed
-                                            };
-
-                                            // Fungsi untuk menghasilkan warna acak
-                                            function generateRandomColors(numColors) {
-                                                var colors = [];
-                                                for (var i = 0; i < numColors; i++) {
-                                                    var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
-                                                    colors.push(randomColor);
-                                                }
-                                                return colors;
-                                            }
-
-                                            // Combine specific colors with random colors
-                                            let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
-
-                                            new Chart(document.getElementById('doughnutChart'), {
-                                                type: 'doughnut',
-                                                data: {
-                                                    labels: labels,
-                                                    datasets: [{
-                                                        label: 'Mill',
-                                                        data: dataCounts,
-                                                        backgroundColor: combinedColors,
-                                                        hoverOffset: 4
-                                                    }]
-                                                },
-                                                options: {
-                                                    plugins: {
-                                                        legend: {
-                                                            display: true,
-                                                            position: 'bottom',
-                                                            labels: {
-                                                                generateLabels: function (chart) {
-                                                                    return topLabelsForLegend.map(label => ({
-                                                                        text: label,
-                                                                        fillStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                        strokeStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                        lineWidth: 2,
-                                                                        hidden: false
-                                                                    }));
-                                                                }
-                                                            }
-                                                        },
-                                                        tooltip: {
-                                                            callbacks: {
-                                                                label: function (context) {
-                                                                    let label = context.label || '';
-                                                                    if (label) {
-                                                                        label += ': ';
-                                                                    }
-                                                                    label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                    return label;
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            });
-                                        });
-                                    </script>
-                                    <!-- End Doughnut Chart -->
-                                </div>
-
-                            </div>
-                        </div><!-- End Revenue Card -->
-
-                        <!-- Revenue Card -->
-                        <div class="col-xxl-2 col-md-2">
-                            <div class="card info-card revenue-card">
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Supplier Type<p class="text-muted">(Mill)</p></h5>
-
-                                    <!-- Doughnut Chart -->
-                                    <canvas id="doughnutChart2" style="max-height: 400px;">
-                                    </canvas>
-                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                    <script>
-                                        document.addEventListener("DOMContentLoaded", () => {
-                                            let millTypeArray = @json($millTypeArray);
-
-                                            // Sort millTypeArray based on count in descending order
-                                            millTypeArray.sort((a, b) => b.count - a.count);
-
-                                            // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                            let topLabelsForLegend = millTypeArray.slice(0, 4).map(item => item.mill_type);
-
-                                            let labels = millTypeArray.map(item => item.mill_type);
-                                            let dataCounts = millTypeArray.map(item => item.count);
-
-                                            // Define specific colors for Indonesia and Malaysia
-                                            let specificColors = {
-                                                'Manage by Plantation': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                'Independent Mill': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
-                                                // Add more specific colors for other countries as needed
-                                            };
-
-                                            // Fungsi untuk menghasilkan warna acak
-                                            function generateRandomColors(numColors) {
-                                                var colors = [];
-                                                for (var i = 0; i < numColors; i++) {
-                                                    var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
-                                                    colors.push(randomColor);
-                                                }
-                                                return colors;
-                                            }
-
-                                            // Combine specific colors with random colors
-                                            let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
-
-                                            new Chart(document.getElementById('doughnutChart2'), {
-                                                type: 'doughnut',
-                                                data: {
-                                                    labels: labels,
-                                                    datasets: [{
-                                                        label: 'Mill',
-                                                        data: dataCounts,
-                                                        backgroundColor: combinedColors,
-                                                        hoverOffset: 4
-                                                    }]
-                                                },
-                                                options: {
-                                                    plugins: {
-                                                        legend: {
-                                                            display: true,
-                                                            position: 'bottom',
-                                                            labels: {
-                                                                generateLabels: function (chart) {
-                                                                    return topLabelsForLegend.map(label => ({
-                                                                        text: label,
-                                                                        fillStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                        strokeStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                        lineWidth: 2,
-                                                                        hidden: false
-                                                                    }));
-                                                                }
-                                                            }
-                                                        },
-                                                        tooltip: {
-                                                            callbacks: {
-                                                                label: function (context) {
-                                                                    let label = context.label || '';
-                                                                    if (label) {
-                                                                        label += ': ';
-                                                                    }
-                                                                    label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                    return label;
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            });
-                                        });
-                                    </script>
-                                    <!-- End Doughnut CHart -->
-
-                                </div>
-
-                            </div>
-                        </div><!-- End Revenue Card -->
-
-                        <!-- Revenue Card -->
-                        <div class="col-xxl-2 col-md-2">
-                            <div class="card info-card revenue-card">
-
-                                <div class="card-body">
-                                    <h5 class="card-title">RSPO Certified<p class="text-muted">(Mill)</p></h5>
-
-                                    <!-- Doughnut Chart -->
-                                    <canvas id="doughnutChart3" style="max-height: 400px;"></canvas>
-                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                    <script>
-                                        document.addEventListener("DOMContentLoaded", () => {
-                                            let millRspoArray = @json($millRspoArray);
-
-                                            // Sort millRspoArray based on count in descending order
-                                            millRspoArray.sort((a, b) => b.count - a.count);
-
-                                            // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                            let topLabelsForLegend = millRspoArray.slice(0, 4).map(item => item.mill_rspo);
-
-                                            let labels = millRspoArray.map(item => item.mill_rspo);
-                                            let dataCounts = millRspoArray.map(item => item.count);
-
-                                            // Define specific colors for Indonesia and Malaysia
-                                            let specificColors = {
-                                                'No': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                'IP': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
-                                                // Add more specific colors for other countries as needed
-                                            };
-
-                                            // Fungsi untuk menghasilkan warna acak
-                                            function generateRandomColors(numColors) {
-                                                var colors = [];
-                                                for (var i = 0; i < numColors; i++) {
-                                                    var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
-                                                    colors.push(randomColor);
-                                                }
-                                                return colors;
-                                            }
-
-                                            // Combine specific colors with random colors
-                                            let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
-
-                                            new Chart(document.getElementById('doughnutChart3'), {
-                                                type: 'doughnut',
-                                                data: {
-                                                    labels: labels,
-                                                    datasets: [{
-                                                        label: 'Mill',
-                                                        data: dataCounts,
-                                                        backgroundColor: combinedColors,
-                                                        hoverOffset: 4
-                                                    }]
-                                                },
-                                                options: {
-                                                    plugins: {
-                                                        legend: {
-                                                            display: true,
-                                                            position: 'bottom',
-                                                            labels: {
-                                                                generateLabels: function (chart) {
-                                                                    return topLabelsForLegend.map(label => ({
-                                                                        text: label,
-                                                                        fillStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                        strokeStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                        lineWidth: 2,
-                                                                        hidden: false
-                                                                    }));
-                                                                }
-                                                            }
-                                                        },
-                                                        tooltip: {
-                                                            callbacks: {
-                                                                label: function (context) {
-                                                                    let label = context.label || '';
-                                                                    if (label) {
-                                                                        label += ': ';
-                                                                    }
-                                                                    label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                    return label;
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            });
-                                        });
-                                    </script>
-                                    <!-- End Doughnut CHart -->
-
-                                </div>
-
-                            </div>
-                        </div><!-- End Revenue Card -->
-
-                        <!-- Revenue Card -->
-                        <div class="col-xxl-2 col-md-2" hidden>
-                            <div class="card info-card revenue-card">
-
-                                <div class="card-body">
-                                    <h5 class="card-title">RSPO Certified</h5>
-
-                                    <!-- Doughnut Chart -->
-                                    <canvas id="doughnutChart4" style="max-height: 400px;"></canvas>
-                                    <script>
-                                        document.addEventListener("DOMContentLoaded", () => {
-                                            new Chart(document.getElementById('doughnutChart4'), {
-                                                type: 'doughnut',
-                                                data: {
-                                                    labels: ['Yes', 'No'],
-                                                    datasets: [{
-                                                        label: 'Mill',
-                                                        data: [20, 70],
-                                                        backgroundColor: [
-                                                            'rgb(255, 99, 132)',
-                                                            'rgb(255, 205, 86)'
-                                                        ],
-                                                        hoverOffset: 4
-                                                    }]
-                                                },
-                                                options: {
-                                                    plugins: {
-                                                        tooltip: {
-                                                            callbacks: {
-                                                                label: function(context) {
-                                                                    let label = context.label || '';
-                                                                    if (label) {
-                                                                        label += ': ';
-                                                                    }
-                                                                    label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                    return label;
-                                                                }
-                                                            }
-                                                        }
-                                                    },
-                                                    plugins: {
-                                                        legend: {
-                                                            position: 'bottom' // Atur posisi legenda ke bagian bawah
-                                                        }
-                                                    }
-                                                }
-                                            });
-                                        });
-                                    </script>
-                                    <!-- End Doughnut CHart -->
-
-                                </div>
-
-                            </div>
-                        </div><!-- End Revenue Card -->
+                        
                     </div>
+                    <div class="tab-content col-xxl-6 col-md-6" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-mills" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <div class="row">
+                                <!-- Revenue Card -->
+                                <div class="col-xxl-4 col-md-4">
+                                    <div class="card info-card revenue-card">
 
-                    <!-- Recent Activity -->
-                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Supplybase Region</h5>
 
-                        <div class="card-body">
-                            <!-- <h5 class="card-title">Maps sedang di siapkan.. <span></span></h5> -->
-                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4826443219645!2d106.79983007462315!3d-6.5867697643880545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5900337fbe1%3A0x41efae520676fac5!2sEarthqualizer%20Foundation!5e0!3m2!1sen!2sus!4v1699127994718!5m2!1sen!2sus" width="530" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-                            <!-- <img src="{{ asset('asset/NiceAdmin/assets/img/maps1.png') }}" alt="" class="img-fluid"> -->
-                            <iframe style="display: none;" src="//mangomap.com/inovasi-digital293/maps/7c0a6a90-84fa-11ee-82d8-027d7e0bb32b?preview=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" oallowfullscreen="" msallowfullscreen="" width="100%" height="600" onload="this.style.display='block';"></iframe>
-                        </div>
-                                        
-                    </div><!-- End Recent Activity -->
+                                            <!-- Doughnut Chart -->
+                                            <canvas id="doughnutChart" style="max-height: 400px;"></canvas>
+                                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                            <script>
+                                                document.addEventListener("DOMContentLoaded", () => {
+                                                    let millRegionArray = @json($millRegionArray);
 
-                </div><!-- End Left side columns -->
+                                                    // Sort millRegionArray based on count in descending order
+                                                    millRegionArray.sort((a, b) => b.count - a.count);
 
-                <!-- Right side columns -->
-                <div class="tab-pane fade show" id="pills-mill" role="tabpanel" aria-labelledby="mill-tab">
+                                                    // Ambil 4 label teratas untuk ditampilkan di bawah grafik
+                                                    let topLabelsForLegend = millRegionArray.slice(0, 4).map(item => item.mill_country);
 
-                    <!-- Recent Activity -->
-                    <div class="card">
+                                                    let labels = millRegionArray.map(item => item.mill_country);
+                                                    let dataCounts = millRegionArray.map(item => item.count);
 
-                        <div class="card-body">
-                            <h5 class="card-title">Mill supplier.. <span></span></h5>
-                            <!-- <h5 class="card-title">Recent Activity <span>| Today</span></h5> -->
-                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4826443219645!2d106.79983007462315!3d-6.5867697643880545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5900337fbe1%3A0x41efae520676fac5!2sEarthqualizer%20Foundation!5e0!3m2!1sen!2sus!4v1699127994718!5m2!1sen!2sus" width="530" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-                            <!-- <img src="{{ asset('asset/NiceAdmin/assets/img/maps1.png') }}" alt="" class="img-fluid"> -->
-                            <iframe style="display: none;" src="//mangomap.com/inovasi-digital293/maps/a63695a6-81f2-11ee-9ba6-027d7e0bb32b?preview=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" oallowfullscreen="" msallowfullscreen="" width="100%" height="600" onload="this.style.display='block';"></iframe>
-                        </div>
+                                                    // Define specific colors for Indonesia and Malaysia
+                                                    let specificColors = {
+                                                        'Indonesia': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'Malaysia': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                        'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
+                                                        'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        // Add more specific colors for other countries as needed
+                                                    };
 
-                        <div class="card">
-                            <div class="card-body">
-                                <!-- <h5 class="card-title">Default Tabs</h5> -->
+                                                    // Fungsi untuk menghasilkan warna acak
+                                                    function generateRandomColors(numColors) {
+                                                        var colors = [];
+                                                        for (var i = 0; i < numColors; i++) {
+                                                            var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+                                                            colors.push(randomColor);
+                                                        }
+                                                        return colors;
+                                                    }
 
-                                <!-- Default Tabs -->
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Mill supplier</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Metric</button>
-                                    </li>
-                                </ul>
-                                <div class="tab-content pt-2" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <!-- Table with stripped rows -->
-                                        <table class="table datatable">
-                                            <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Mill name</th>
-                                                <th scope="col">Region</th>
-                                                <th scope="col">Country</th>
-                                                <th scope="col">Group</th>
-                                                <th scope="col">Company</th>
-                                                <th scope="col">RSPO certified</th>
-                                                <th scope="col">Detail</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach($millss as $key => $mill)
-                                                <tr>
-                                                    <th scope="row">{{ $key + 1 }}</th>
-                                                    <td>{{$mill->mill_name}}</td>
-                                                    <td>{{$mill->region}}</td>
-                                                    <td>{{$mill->country}}</td>
-                                                    <td>{{$mill->group_name}}</td>
-                                                    <td>{{$mill->company_name}}</td>
-                                                    <td>{{$mill->rspo_certified}}</td>
-                                                    <td><a href="{{route('agriplotByMill', $mill->mill_name)}}">Details</a></td>
-                                                </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                        <!-- End Table with stripped rows -->
-                                    </div>
-                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <!-- Table with stripped rows -->
-                                        <div class="row">
-                                            <!-- Revenue Card -->
-                                            <div class="col-xxl-3 col-md-3">
-                                                <div class="card info-card revenue-card">
+                                                    // Combine specific colors with random colors
+                                                    let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
 
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Supplier mill region</h5>
-
-                                                        <!-- Doughnut Chart -->
-                                                        <canvas id="doughnutChart5" style="max-height: 400px;"></canvas>
-                                                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                                        <script>
-                                                            document.addEventListener("DOMContentLoaded", () => {
-                                                                let millRegionArray2 = @json($millRegionArray2);
-
-                                                                // Sort millRegionArray2 based on count in descending order
-                                                                millRegionArray2.sort((a, b) => b.count - a.count);
-
-                                                                // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                                let topLabelsForLegend = millRegionArray2.slice(0, 4).map(item => item.mill_country);
-
-                                                                let labels = millRegionArray2.map(item => item.mill_country);
-                                                                let dataCounts = millRegionArray2.map(item => item.count);
-
-                                                                // Define specific colors for Indonesia and Malaysia
-                                                                let specificColors = {
-                                                                    'Indonesia': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                                    'Malaysia': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                                    'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                                    'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
-                                                                    // Add more specific colors for other countries as needed
-                                                                };
-
-                                                                // Fungsi untuk menghasilkan warna acak
-                                                                function generateRandomColors(numColors) {
-                                                                    var colors = [];
-                                                                    for (var i = 0; i < numColors; i++) {
-                                                                        var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
-                                                                        colors.push(randomColor);
-                                                                    }
-                                                                    return colors;
-                                                                }
-
-                                                                // Combine specific colors with random colors
-                                                                let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
-
-                                                                new Chart(document.getElementById('doughnutChart5'), {
-                                                                    type: 'doughnut',
-                                                                    data: {
-                                                                        labels: labels,
-                                                                        datasets: [{
-                                                                            label: 'Mill',
-                                                                            data: dataCounts,
-                                                                            backgroundColor: combinedColors,
-                                                                            hoverOffset: 4
-                                                                        }]
-                                                                    },
-                                                                    options: {
-                                                                        plugins: {
-                                                                            legend: {
-                                                                                display: true,
-                                                                                position: 'bottom',
-                                                                                labels: {
-                                                                                    generateLabels: function (chart) {
-                                                                                        return topLabelsForLegend.map(label => ({
-                                                                                            text: label,
-                                                                                            fillStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                                            strokeStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                                            lineWidth: 2,
-                                                                                            hidden: false
-                                                                                        }));
-                                                                                    }
-                                                                                }
-                                                                            },
-                                                                            tooltip: {
-                                                                                callbacks: {
-                                                                                    label: function (context) {
-                                                                                        let label = context.label || '';
-                                                                                        if (label) {
-                                                                                            label += ': ';
-                                                                                        }
-                                                                                        label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                                        return label;
-                                                                                    }
-                                                                                }
-                                                                            }
+                                                    new Chart(document.getElementById('doughnutChart'), {
+                                                        type: 'doughnut',
+                                                        data: {
+                                                            labels: labels,
+                                                            datasets: [{
+                                                                label: 'Mill',
+                                                                data: dataCounts,
+                                                                backgroundColor: combinedColors,
+                                                                hoverOffset: 4
+                                                            }]
+                                                        },
+                                                        options: {
+                                                            plugins: {
+                                                                legend: {
+                                                                    display: true,
+                                                                    position: 'bottom',
+                                                                    labels: {
+                                                                        generateLabels: function (chart) {
+                                                                            return topLabelsForLegend.map(label => ({
+                                                                                text: label,
+                                                                                fillStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                strokeStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                lineWidth: 2,
+                                                                                hidden: false
+                                                                            }));
                                                                         }
                                                                     }
-                                                                });
-                                                            });
-                                                        </script>
-
-                                                        <!-- End Doughnut CHart -->
-
-                                                    </div>
-
-                                                </div>
-                                            </div><!-- End Revenue Card -->
-
-                                            <!-- Revenue Card -->
-                                            <div class="col-xxl-3 col-md-3">
-                                                <div class="card info-card revenue-card">
-
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Supplier Type</h5>
-
-                                                        <!-- Doughnut Chart -->
-                                                        <canvas id="doughnutChart6" style="max-height: 400px;">
-                                                        </canvas>
-                                                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                                        <script>
-                                                            document.addEventListener("DOMContentLoaded", () => {
-                                                                let millTypeArray2 = @json($millTypeArray2);
-
-                                                                // Sort millTypeArray2 based on count in descending order
-                                                                millTypeArray2.sort((a, b) => b.count - a.count);
-
-                                                                // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                                let topLabelsForLegend = millTypeArray2.slice(0, 4).map(item => item.mill_type);
-
-                                                                let labels = millTypeArray2.map(item => item.mill_type);
-                                                                let dataCounts = millTypeArray2.map(item => item.count);
-
-                                                                // Define specific colors for Indonesia and Malaysia
-                                                                let specificColors = {
-                                                                    'Manage by Plantation': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                                    'Independent Mill': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                                    'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                                    'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
-                                                                    // Add more specific colors for other countries as needed
-                                                                };
-
-                                                                // Fungsi untuk menghasilkan warna acak
-                                                                function generateRandomColors(numColors) {
-                                                                    var colors = [];
-                                                                    for (var i = 0; i < numColors; i++) {
-                                                                        var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
-                                                                        colors.push(randomColor);
-                                                                    }
-                                                                    return colors;
-                                                                }
-
-                                                                // Combine specific colors with random colors
-                                                                let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
-
-                                                                new Chart(document.getElementById('doughnutChart6'), {
-                                                                    type: 'doughnut',
-                                                                    data: {
-                                                                        labels: labels,
-                                                                        datasets: [{
-                                                                            label: 'Mill',
-                                                                            data: dataCounts,
-                                                                            backgroundColor: combinedColors,
-                                                                            hoverOffset: 4
-                                                                        }]
-                                                                    },
-                                                                    options: {
-                                                                        plugins: {
-                                                                            legend: {
-                                                                                display: true,
-                                                                                position: 'bottom',
-                                                                                labels: {
-                                                                                    generateLabels: function (chart) {
-                                                                                        return topLabelsForLegend.map(label => ({
-                                                                                            text: label,
-                                                                                            fillStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                                            strokeStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                                            lineWidth: 2,
-                                                                                            hidden: false
-                                                                                        }));
-                                                                                    }
-                                                                                }
-                                                                            },
-                                                                            tooltip: {
-                                                                                callbacks: {
-                                                                                    label: function (context) {
-                                                                                        let label = context.label || '';
-                                                                                        if (label) {
-                                                                                            label += ': ';
-                                                                                        }
-                                                                                        label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                                        return label;
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                });
-                                                            });
-                                                        </script>
-
-                                                        <!-- End Doughnut CHart -->
-
-                                                    </div>
-
-                                                </div>
-                                            </div><!-- End Revenue Card -->
-
-                                            <!-- Revenue Card -->
-                                            <div class="col-xxl-3 col-md-3">
-                                                <div class="card info-card revenue-card">
-
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">RSPO Certified</h5>
-
-                                                        <!-- Doughnut Chart -->
-                                                        <canvas id="doughnutChart7" style="max-height: 400px;"></canvas>
-                                                        <script>
-                                                            document.addEventListener("DOMContentLoaded", () => {
-                                                                let millRspoArray2 = @json($millRspoArray2);
-
-                                                                // Sort millRspoArray2 based on count in descending order
-                                                                millRspoArray2.sort((a, b) => b.count - a.count);
-
-                                                                // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                                let topLabelsForLegend = millRspoArray2.slice(0, 4).map(item => item.mill_rspo);
-
-                                                                let labels = millRspoArray2.map(item => item.mill_rspo);
-                                                                let dataCounts = millRspoArray2.map(item => item.count);
-
-                                                                // Define specific colors for Indonesia and Malaysia
-                                                                let specificColors = {
-                                                                    'No': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                                    'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                                    'IP': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                                    'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
-                                                                    // Add more specific colors for other countries as needed
-                                                                };
-
-                                                                // Fungsi untuk menghasilkan warna acak
-                                                                function generateRandomColors(numColors) {
-                                                                    var colors = [];
-                                                                    for (var i = 0; i < numColors; i++) {
-                                                                        var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
-                                                                        colors.push(randomColor);
-                                                                    }
-                                                                    return colors;
-                                                                }
-
-                                                                // Combine specific colors with random colors
-                                                                let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
-
-                                                                new Chart(document.getElementById('doughnutChart7'), {
-                                                                    type: 'doughnut',
-                                                                    data: {
-                                                                        labels: labels,
-                                                                        datasets: [{
-                                                                            label: 'Mill',
-                                                                            data: dataCounts,
-                                                                            backgroundColor: combinedColors,
-                                                                            hoverOffset: 4
-                                                                        }]
-                                                                    },
-                                                                    options: {
-                                                                        plugins: {
-                                                                            legend: {
-                                                                                display: true,
-                                                                                position: 'bottom',
-                                                                                labels: {
-                                                                                    generateLabels: function (chart) {
-                                                                                        return topLabelsForLegend.map(label => ({
-                                                                                            text: label,
-                                                                                            fillStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                                            strokeStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                                            lineWidth: 2,
-                                                                                            hidden: false
-                                                                                        }));
-                                                                                    }
-                                                                                }
-                                                                            },
-                                                                            tooltip: {
-                                                                                callbacks: {
-                                                                                    label: function (context) {
-                                                                                        let label = context.label || '';
-                                                                                        if (label) {
-                                                                                            label += ': ';
-                                                                                        }
-                                                                                        label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                                        return label;
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                });
-                                                            });
-                                                        </script>
-                                                        <!-- End Doughnut CHart -->
-
-                                                    </div>
-
-                                                </div>
-                                            </div><!-- End Revenue Card -->
-
-                                            <!-- Revenue Card -->
-                                            <div class="col-xxl-3 col-md-3">
-                                                <div class="card info-card revenue-card">
-
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Supplier Risk</h5>
-
-                                                        <!-- Doughnut Chart -->
-                                                        <canvas id="doughnutChart8" style="max-height: 400px;"></canvas>
-                                                        <script>
-                                                            document.addEventListener("DOMContentLoaded", () => {
-                                                                let millDeforestationRiskArray = @json($millDeforestationRiskArray);
-
-                                                                // Sort millDeforestationRiskArray based on count in descending order
-                                                                millDeforestationRiskArray.sort((a, b) => b.count - a.count);
-
-                                                                // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                                let topLabelsForLegend = millDeforestationRiskArray.slice(0, 4).map(item => item.mill_deforestation_risk);
-
-                                                                let labels = millDeforestationRiskArray.map(item => item.mill_deforestation_risk);
-                                                                let dataCounts = millDeforestationRiskArray.map(item => item.count);
-
-                                                                // Define specific colors for Indonesia and Malaysia
-                                                                let specificColors = {
-                                                                    '': 'rgb(192, 192, 192)', // Green for Indonesia
-                                                                    'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                                    'IP': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                                    'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
-                                                                    // Add more specific colors for other countries as needed
-                                                                };
-
-                                                                // Fungsi untuk menghasilkan warna acak
-                                                                function generateRandomColors(numColors) {
-                                                                    var colors = [];
-                                                                    for (var i = 0; i < numColors; i++) {
-                                                                        var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
-                                                                        colors.push(randomColor);
-                                                                    }
-                                                                    return colors;
-                                                                }
-
-                                                                // Combine specific colors with random colors
-                                                                let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
-
-                                                                new Chart(document.getElementById('doughnutChart8'), {
-                                                                    type: 'doughnut',
-                                                                    data: {
-                                                                        labels: labels,
-                                                                        datasets: [{
-                                                                            label: 'Mill',
-                                                                            data: dataCounts,
-                                                                            backgroundColor: combinedColors,
-                                                                            hoverOffset: 4
-                                                                        }]
-                                                                    },
-                                                                    options: {
-                                                                        plugins: {
-                                                                            legend: {
-                                                                                display: true,
-                                                                                position: 'bottom',
-                                                                                labels: {
-                                                                                    generateLabels: function (chart) {
-                                                                                        return topLabelsForLegend.map(label => ({
-                                                                                            text: label,
-                                                                                            fillStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                                            strokeStyle: specificColors[label] || generateRandomColors(1)[0],
-                                                                                            lineWidth: 2,
-                                                                                            hidden: false
-                                                                                        }));
-                                                                                    }
-                                                                                }
-                                                                            },
-                                                                            tooltip: {
-                                                                                callbacks: {
-                                                                                    label: function (context) {
-                                                                                        let label = context.label || '';
-                                                                                        if (label) {
-                                                                                            label += ': ';
-                                                                                        }
-                                                                                        label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                                        return label;
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                });
-                                                            });
-                                                        </script>
-                                                        <!-- End Doughnut CHart -->
-
-                                                    </div>
-
-                                                </div>
-                                            </div><!-- End Revenue Card -->
-                                        </div>
-                                        <!-- End Sales Card -->
-                                    </div>
-                                </div><!-- End Default Tabs -->
-
-                            </div>
-                        </div>
-                    
-                    </div><!-- End Recent Activity -->
-
-                </div><!-- End Right side columns -->
-
-                <!-- Right side columns -->
-                <div class="tab-pane fade show" id="pills-plot" role="tabpanel" aria-labelledby="plot-tab">
-
-                    <!-- Recent Activity -->
-                    <div class="card">
-
-                        <div class="card-body">
-                            <h5 class="card-title">Plot supplier.. <span></span></h5>
-                            <!-- <h5 class="card-title">Recent Activity <span>| Today</span></h5> -->
-                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4826443219645!2d106.79983007462315!3d-6.5867697643880545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5900337fbe1%3A0x41efae520676fac5!2sEarthqualizer%20Foundation!5e0!3m2!1sen!2sus!4v1699127994718!5m2!1sen!2sus" width="530" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-                            <!-- <img src="{{ asset('asset/NiceAdmin/assets/img/maps1.png') }}" alt="" class="img-fluid"> -->
-                            <iframe style="display: none;" src="//mangomap.com/inovasi-digital293/maps/15f1d00a-81d4-11ee-834c-027d7e0bb32b?preview=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" oallowfullscreen="" msallowfullscreen="" width="100%" height="600" onload="this.style.display='block';"></iframe>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-body">
-                                <!-- <h5 class="card-title">Default Tabs</h5> -->
-
-                                <!-- Default Tabs -->
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home2" type="button" role="tab" aria-controls="home" aria-selected="true">Mill supplier</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile2" type="button" role="tab" aria-controls="profile" aria-selected="false">Metric</button>
-                                    </li>
-                                </ul>
-                                <div class="tab-content pt-2" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home2" role="tabpanel" aria-labelledby="home-tab">
-                                        <!-- Table with stripped rows -->
-                                        <table class="table datatable">
-                                            <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Supplier name</th>
-                                                <th scope="col">Region</th>
-                                                <th scope="col">Country</th>
-                                                <th scope="col">Group company</th>
-                                                <th scope="col">Type</th>
-                                                <th scope="col">RSPO Certified</th>
-                                                <th scope="col">Details</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            @foreach($agriplots as $key => $agriplot)
-                                            <tr>
-                                                <td scope="row">{{ $key + 1 }}</td>
-                                                <td>{{$agriplot->estate}}</td>
-                                                <td>{{$agriplot->region}}</td>
-                                                <td>{{$agriplot->country}}</td>
-                                                <td>{{$agriplot->group}}</td>
-                                                <td>{{$agriplot->type_of_supplier}}</td>
-                                                <td>{{$agriplot->rspo_certified}}</td>
-                                                <td>Details</td>
-                                            </tr>
-                                            @endforeach
-                                            </tbody>
-                                        </table>
-                                        <!-- End Table with stripped rows -->
-                                    </div>
-                                    <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile-tab">
-                                        <!-- Table with stripped rows -->
-                                        <div class="row">
-                                            <!-- Revenue Card -->
-                                            <div class="col-xxl-3 col-md-3">
-                                                <div class="card info-card revenue-card">
-
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Supplybase region</h5>
-
-                                                        <!-- Doughnut Chart -->
-                                                        <canvas id="doughnutChart9" style="max-height: 400px;"></canvas>
-                                                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                                        <script>
-                                                        document.addEventListener("DOMContentLoaded", () => {
-                                                            new Chart(document.getElementById('doughnutChart9'), {
-                                                                type: 'doughnut',
-                                                                data: {
-                                                                    labels: ['Indonesia', 'PNG', 'Malaysia'],
-                                                                    datasets: [{
-                                                                        label: 'Mill',
-                                                                        data: [500, 200, 300],
-                                                                        backgroundColor: [
-                                                                            'rgb(255, 99, 132)',
-                                                                            'rgb(54, 162, 235)',
-                                                                            'rgb(255, 205, 86)'
-                                                                        ],
-                                                                        hoverOffset: 4
-                                                                    }]
                                                                 },
-                                                                options: {
-                                                                    plugins: {
-                                                                        legend: {
-                                                                            display: true,
-                                                                            position: 'bottom'
-                                                                        },
-                                                                        tooltip: {
-                                                                            callbacks: {
-                                                                                label: function(context) {
-                                                                                    let label = context.label || '';
-                                                                                    if (label) {
-                                                                                        label += ': ';
-                                                                                    }
-                                                                                    label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                                    return label;
-                                                                                }
+                                                                tooltip: {
+                                                                    callbacks: {
+                                                                        label: function (context) {
+                                                                            let label = context.label || '';
+                                                                            if (label) {
+                                                                                label += ': ';
                                                                             }
+                                                                            label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
+                                                                            return label;
                                                                         }
                                                                     }
                                                                 }
-                                                            });
-                                                        });
-                                                        </script>
-
-                                                        <!-- End Doughnut CHart -->
-
-                                                    </div>
-
-                                                </div>
-                                            </div><!-- End Revenue Card -->
-
-                                            <!-- Revenue Card -->
-                                            <div class="col-xxl-3 col-md-3">
-                                                <div class="card info-card revenue-card">
-
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Supplier Type</h5>
-
-                                                        <!-- Doughnut Chart -->
-                                                        <canvas id="doughnutChart10" style="max-height: 400px;">
-                                                        </canvas>
-                                                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                                        <script>
-                                                            document.addEventListener("DOMContentLoaded", () => {
-                                                                new Chart(document.getElementById('doughnutChart10'), {
-                                                                    type: 'doughnut',
-                                                                    data: {
-                                                                        labels: ['Manage by plantation', 'Independent mill'],
-                                                                        datasets: [{
-                                                                            label: 'Mill',
-                                                                            data: [5345, 300],
-                                                                            backgroundColor: [
-                                                                                'rgb(255, 99, 132)',
-                                                                                'rgb(255, 205, 86)'
-                                                                            ],
-                                                                            hoverOffset: 4
-                                                                        }]
-                                                                    },
-                                                                    options: {
-                                                                        plugins: {
-                                                                            legend: {
-                                                                                display: true,
-                                                                                position: 'bottom'
-                                                                            },
-                                                                            tooltip: {
-                                                                                callbacks: {
-                                                                                    label: function(context) {
-                                                                                        let label = context.label || '';
-                                                                                        if (label) {
-                                                                                            label += ': ';
-                                                                                        }
-                                                                                        label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                                        return label;
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                });
-                                                            });
-                                                        </script>
-                                                        <!-- End Doughnut CHart -->
-
-                                                    </div>
-
-                                                </div>
-                                            </div><!-- End Revenue Card -->
-
-                                            <!-- Revenue Card -->
-                                            <div class="col-xxl-3 col-md-3">
-                                                <div class="card info-card revenue-card">
-
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">RSPO Certified</h5>
-
-                                                        <!-- Doughnut Chart -->
-                                                        <canvas id="doughnutChart11" style="max-height: 400px;"></canvas>
-                                                        <script>
-                                                            document.addEventListener("DOMContentLoaded", () => {
-                                                                new Chart(document.getElementById('doughnutChart11'), {
-                                                                    type: 'doughnut',
-                                                                    data: {
-                                                                        labels: ['Yes', 'No'],
-                                                                        datasets: [{
-                                                                            label: 'Mill',
-                                                                            data: [20, 70],
-                                                                            backgroundColor: [
-                                                                                'rgb(255, 99, 132)',
-                                                                                'rgb(255, 205, 86)'
-                                                                            ],
-                                                                            hoverOffset: 4
-                                                                        }]
-                                                                    },
-                                                                    options: {
-                                                                        plugins: {
-                                                                            legend: {
-                                                                                display: true,
-                                                                                position: 'bottom'
-                                                                            },
-                                                                            tooltip: {
-                                                                                callbacks: {
-                                                                                    label: function(context) {
-                                                                                        let label = context.label || '';
-                                                                                        if (label) {
-                                                                                            label += ': ';
-                                                                                        }
-                                                                                        label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                                        return label;
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                });
-                                                            });
-                                                        </script>
-                                                        <!-- End Doughnut CHart -->
-
-                                                    </div>
-
-                                                </div>
-                                            </div><!-- End Revenue Card -->
-
-                                            <!-- Revenue Card -->
-                                            <div class="col-xxl-3 col-md-3">
-                                                <div class="card info-card revenue-card">
-
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Supplier Risk</h5>
-
-                                                        <!-- Doughnut Chart -->
-                                                        <canvas id="doughnutChart12" style="max-height: 400px;"></canvas>
-                                                        <script>
-                                                            document.addEventListener("DOMContentLoaded", () => {
-                                                                new Chart(document.getElementById('doughnutChart12'), {
-                                                                    type: 'doughnut',
-                                                                    data: {
-                                                                        labels: ['Yes', 'No'],
-                                                                        datasets: [{
-                                                                            label: 'Mill',
-                                                                            data: [20, 70],
-                                                                            backgroundColor: [
-                                                                                'rgb(255, 99, 132)',
-                                                                                'rgb(255, 205, 86)'
-                                                                            ],
-                                                                            hoverOffset: 4
-                                                                        }]
-                                                                    },
-                                                                    options: {
-                                                                        plugins: {
-                                                                            legend: {
-                                                                                display: true,
-                                                                                position: 'bottom'
-                                                                            },
-                                                                            tooltip: {
-                                                                                callbacks: {
-                                                                                    label: function(context) {
-                                                                                        let label = context.label || '';
-                                                                                        if (label) {
-                                                                                            label += ': ';
-                                                                                        }
-                                                                                        label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
-                                                                                        return label;
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                });
-                                                            });
-                                                        </script>
-                                                        <!-- End Doughnut CHart -->
-
-                                                    </div>
-
-                                                </div>
-                                            </div><!-- End Revenue Card -->
+                                                            }
+                                                        }
+                                                    });
+                                                });
+                                            </script>
+                                            <!-- End Doughnut Chart -->
                                         </div>
-                                        <!-- End Sales Card -->
-                                    </div>
-                                </div><!-- End Default Tabs -->
 
+                                    </div>
+                                </div><!-- End Revenue Card -->
+
+                                <!-- Revenue Card -->
+                                <div class="col-xxl-4 col-md-4">
+                                    <div class="card info-card revenue-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Supplier Type</h5>
+
+                                            <!-- Doughnut Chart -->
+                                            <canvas id="doughnutChart2" style="max-height: 400px;">
+                                            </canvas>
+                                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                            <script>
+                                                document.addEventListener("DOMContentLoaded", () => {
+                                                    let millTypeArray = @json($millTypeArray);
+
+                                                    // Sort millTypeArray based on count in descending order
+                                                    millTypeArray.sort((a, b) => b.count - a.count);
+
+                                                    // Ambil 4 label teratas untuk ditampilkan di bawah grafik
+                                                    let topLabelsForLegend = millTypeArray.slice(0, 4).map(item => item.mill_type);
+
+                                                    let labels = millTypeArray.map(item => item.mill_type);
+                                                    let dataCounts = millTypeArray.map(item => item.count);
+
+                                                    // Define specific colors for Indonesia and Malaysia
+                                                    let specificColors = {
+                                                        'Manage by Plantation': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'Independent Mill': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                        'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
+                                                        'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        // Add more specific colors for other countries as needed
+                                                    };
+
+                                                    // Fungsi untuk menghasilkan warna acak
+                                                    function generateRandomColors(numColors) {
+                                                        var colors = [];
+                                                        for (var i = 0; i < numColors; i++) {
+                                                            var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+                                                            colors.push(randomColor);
+                                                        }
+                                                        return colors;
+                                                    }
+
+                                                    // Combine specific colors with random colors
+                                                    let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
+
+                                                    new Chart(document.getElementById('doughnutChart2'), {
+                                                        type: 'doughnut',
+                                                        data: {
+                                                            labels: labels,
+                                                            datasets: [{
+                                                                label: 'Mill',
+                                                                data: dataCounts,
+                                                                backgroundColor: combinedColors,
+                                                                hoverOffset: 4
+                                                            }]
+                                                        },
+                                                        options: {
+                                                            plugins: {
+                                                                legend: {
+                                                                    display: true,
+                                                                    position: 'bottom',
+                                                                    labels: {
+                                                                        generateLabels: function (chart) {
+                                                                            return topLabelsForLegend.map(label => ({
+                                                                                text: label,
+                                                                                fillStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                strokeStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                lineWidth: 2,
+                                                                                hidden: false
+                                                                            }));
+                                                                        }
+                                                                    }
+                                                                },
+                                                                tooltip: {
+                                                                    callbacks: {
+                                                                        label: function (context) {
+                                                                            let label = context.label || '';
+                                                                            if (label) {
+                                                                                label += ': ';
+                                                                            }
+                                                                            label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
+                                                                            return label;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    });
+                                                });
+                                            </script>
+                                            <!-- End Doughnut CHart -->
+
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Revenue Card -->
+
+                                <!-- Revenue Card -->
+                                <div class="col-xxl-4 col-md-4">
+                                    <div class="card info-card revenue-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">RSPO Certified</h5>
+
+                                            <!-- Doughnut Chart -->
+                                            <canvas id="doughnutChart3" style="max-height: 400px;"></canvas>
+                                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                            <script>
+                                                document.addEventListener("DOMContentLoaded", () => {
+                                                    let millRspoArray = @json($millRspoArray);
+
+                                                    // Sort millRspoArray based on count in descending order
+                                                    millRspoArray.sort((a, b) => b.count - a.count);
+
+                                                    // Ambil 4 label teratas untuk ditampilkan di bawah grafik
+                                                    let topLabelsForLegend = millRspoArray.slice(0, 4).map(item => item.mill_rspo);
+
+                                                    let labels = millRspoArray.map(item => item.mill_rspo);
+                                                    let dataCounts = millRspoArray.map(item => item.count);
+
+                                                    // Define specific colors for Indonesia and Malaysia
+                                                    let specificColors = {
+                                                        'No': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                        'IP': 'rgb(62, 250, 153)', // Blue for Thailand
+                                                        'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        // Add more specific colors for other countries as needed
+                                                    };
+
+                                                    // Fungsi untuk menghasilkan warna acak
+                                                    function generateRandomColors(numColors) {
+                                                        var colors = [];
+                                                        for (var i = 0; i < numColors; i++) {
+                                                            var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+                                                            colors.push(randomColor);
+                                                        }
+                                                        return colors;
+                                                    }
+
+                                                    // Combine specific colors with random colors
+                                                    let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
+
+                                                    new Chart(document.getElementById('doughnutChart3'), {
+                                                        type: 'doughnut',
+                                                        data: {
+                                                            labels: labels,
+                                                            datasets: [{
+                                                                label: 'Mill',
+                                                                data: dataCounts,
+                                                                backgroundColor: combinedColors,
+                                                                hoverOffset: 4
+                                                            }]
+                                                        },
+                                                        options: {
+                                                            plugins: {
+                                                                legend: {
+                                                                    display: true,
+                                                                    position: 'bottom',
+                                                                    labels: {
+                                                                        generateLabels: function (chart) {
+                                                                            return topLabelsForLegend.map(label => ({
+                                                                                text: label,
+                                                                                fillStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                strokeStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                lineWidth: 2,
+                                                                                hidden: false
+                                                                            }));
+                                                                        }
+                                                                    }
+                                                                },
+                                                                tooltip: {
+                                                                    callbacks: {
+                                                                        label: function (context) {
+                                                                            let label = context.label || '';
+                                                                            if (label) {
+                                                                                label += ': ';
+                                                                            }
+                                                                            label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
+                                                                            return label;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    });
+                                                });
+                                            </script>
+                                            <!-- End Doughnut CHart -->
+
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Revenue Card -->
                             </div>
                         </div>
-                    
-                    </div><!-- End Recent Activity -->
+                        <div class="tab-pane fade" id="v-pills-refinery" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <div class="row">
+                                <!-- Revenue Card -->
+                                <div class="col-xxl-4 col-md-4">
+                                    <div class="card info-card revenue-card">
 
-                </div><!-- End Right side columns -->
+                                        <div class="card-body">
+                                            <h5 class="card-title">Supplybase Region</h5>
 
-                <!-- Right side columns -->
-                <div class="tab-pane fade show" id="pills-plot-insight" role="tabpanel" aria-labelledby="home-tab">
+                                            <!-- Doughnut Chart -->
+                                            <canvas id="doughnutChar5" style="max-height: 400px;"></canvas>
+                                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                            <script>
+                                                document.addEventListener("DOMContentLoaded", () => {
+                                                    let refineryRegionArray = @json($refineryRegionArray);
 
-                    <!-- Recent Activity -->
-                    <div class="card">
+                                                    // Sort refineryRegionArray based on count in descending order
+                                                    refineryRegionArray.sort((a, b) => b.count - a.count);
 
-                        <div class="card-body">
-                            <h5 class="card-title">Maps sedang di siapkan.. <span></span></h5>
-                            <!-- <h5 class="card-title">Recent Activity <span>| Today</span></h5> -->
-                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4826443219645!2d106.79983007462315!3d-6.5867697643880545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5900337fbe1%3A0x41efae520676fac5!2sEarthqualizer%20Foundation!5e0!3m2!1sen!2sus!4v1699127994718!5m2!1sen!2sus" width="530" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-                            <img src="{{ asset('asset/NiceAdmin/assets/img/map.png') }}" alt="" class="img-fluid">
+                                                    // Ambil 4 label teratas untuk ditampilkan di bawah grafik
+                                                    let topLabelsForLegend = refineryRegionArray.slice(0, 4).map(item => item.refinery_country);
+
+                                                    let labels = refineryRegionArray.map(item => item.refinery_country);
+                                                    let dataCounts = refineryRegionArray.map(item => item.count);
+
+                                                    // Define specific colors for Indonesia and Malaysia
+                                                    let specificColors = {
+                                                        'Indonesia': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'Malaysia': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                        'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
+                                                        'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        // Add more specific colors for other countries as needed
+                                                    };
+
+                                                    // Fungsi untuk menghasilkan warna acak
+                                                    function generateRandomColors(numColors) {
+                                                        var colors = [];
+                                                        for (var i = 0; i < numColors; i++) {
+                                                            var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+                                                            colors.push(randomColor);
+                                                        }
+                                                        return colors;
+                                                    }
+
+                                                    // Combine specific colors with random colors
+                                                    let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
+
+                                                    new Chart(document.getElementById('doughnutChart5'), {
+                                                        type: 'doughnut',
+                                                        data: {
+                                                            labels: labels,
+                                                            datasets: [{
+                                                                label: 'Mill',
+                                                                data: dataCounts,
+                                                                backgroundColor: combinedColors,
+                                                                hoverOffset: 4
+                                                            }]
+                                                        },
+                                                        options: {
+                                                            plugins: {
+                                                                legend: {
+                                                                    display: true,
+                                                                    position: 'bottom',
+                                                                    labels: {
+                                                                        generateLabels: function (chart) {
+                                                                            return topLabelsForLegend.map(label => ({
+                                                                                text: label,
+                                                                                fillStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                strokeStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                lineWidth: 2,
+                                                                                hidden: false
+                                                                            }));
+                                                                        }
+                                                                    }
+                                                                },
+                                                                tooltip: {
+                                                                    callbacks: {
+                                                                        label: function (context) {
+                                                                            let label = context.label || '';
+                                                                            if (label) {
+                                                                                label += ': ';
+                                                                            }
+                                                                            label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
+                                                                            return label;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    });
+                                                });
+                                            </script>
+                                            <!-- End Doughnut Chart -->
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Revenue Card -->
+
+                                <!-- Revenue Card -->
+                                <div class="col-xxl-4 col-md-4">
+                                    <div class="card info-card revenue-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Supplier Type</h5>
+
+                                            <!-- Doughnut Chart -->
+                                            <canvas id="doughnutChart5" style="max-height: 400px;">
+                                            </canvas>
+                                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                            <script>
+                                                document.addEventListener("DOMContentLoaded", () => {
+                                                    let refineryTypeArray = @json($refineryTypeArray);
+
+                                                    // Sort refineryTypeArray based on count in descending order
+                                                    refineryTypeArray.sort((a, b) => b.count - a.count);
+
+                                                    // Ambil 4 label teratas untuk ditampilkan di bawah grafik
+                                                    let topLabelsForLegend = refineryTypeArray.slice(0, 4).map(item => item.refinery_type);
+
+                                                    let labels = refineryTypeArray.map(item => item.refinery_type);
+                                                    let dataCounts = refineryTypeArray.map(item => item.count);
+
+                                                    // Define specific colors for Indonesia and Malaysia
+                                                    let specificColors = {
+                                                        'Manage by Plantation': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'Independent Mill': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                        'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
+                                                        'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        // Add more specific colors for other countries as needed
+                                                    };
+
+                                                    // Fungsi untuk menghasilkan warna acak
+                                                    function generateRandomColors(numColors) {
+                                                        var colors = [];
+                                                        for (var i = 0; i < numColors; i++) {
+                                                            var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+                                                            colors.push(randomColor);
+                                                        }
+                                                        return colors;
+                                                    }
+
+                                                    // Combine specific colors with random colors
+                                                    let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
+
+                                                    new Chart(document.getElementById('doughnutChart5'), {
+                                                        type: 'doughnut',
+                                                        data: {
+                                                            labels: labels,
+                                                            datasets: [{
+                                                                label: 'Mill',
+                                                                data: dataCounts,
+                                                                backgroundColor: combinedColors,
+                                                                hoverOffset: 4
+                                                            }]
+                                                        },
+                                                        options: {
+                                                            plugins: {
+                                                                legend: {
+                                                                    display: true,
+                                                                    position: 'bottom',
+                                                                    labels: {
+                                                                        generateLabels: function (chart) {
+                                                                            return topLabelsForLegend.map(label => ({
+                                                                                text: label,
+                                                                                fillStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                strokeStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                lineWidth: 2,
+                                                                                hidden: false
+                                                                            }));
+                                                                        }
+                                                                    }
+                                                                },
+                                                                tooltip: {
+                                                                    callbacks: {
+                                                                        label: function (context) {
+                                                                            let label = context.label || '';
+                                                                            if (label) {
+                                                                                label += ': ';
+                                                                            }
+                                                                            label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
+                                                                            return label;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    });
+                                                });
+                                            </script>
+                                            <!-- End Doughnut CHart -->
+
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Revenue Card -->
+
+                                <!-- Revenue Card -->
+                                <div class="col-xxl-4 col-md-4">
+                                    <div class="card info-card revenue-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">RSPO Certified</h5>
+
+                                            <!-- Doughnut Chart -->
+                                            <canvas id="doughnutChart6" style="max-height: 400px;"></canvas>
+                                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                            <script>
+                                                document.addEventListener("DOMContentLoaded", () => {
+                                                    let refineryRspoArray = @json($refineryRspoArray);
+
+                                                    // Sort refineryRspoArray based on count in descending order
+                                                    refineryRspoArray.sort((a, b) => b.count - a.count);
+
+                                                    // Ambil 4 label teratas untuk ditampilkan di bawah grafik
+                                                    let topLabelsForLegend = refineryRspoArray.slice(0, 4).map(item => item.refinery_type);
+
+                                                    let labels = refineryRspoArray.map(item => item.refinery_type);
+                                                    let dataCounts = refineryRspoArray.map(item => item.count);
+
+                                                    // Define specific colors for Indonesia and Malaysia
+                                                    let specificColors = {
+                                                        'No': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                        'IP': 'rgb(62, 250, 153)', // Blue for Thailand
+                                                        'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        // Add more specific colors for other countries as needed
+                                                    };
+
+                                                    // Fungsi untuk menghasilkan warna acak
+                                                    function generateRandomColors(numColors) {
+                                                        var colors = [];
+                                                        for (var i = 0; i < numColors; i++) {
+                                                            var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+                                                            colors.push(randomColor);
+                                                        }
+                                                        return colors;
+                                                    }
+
+                                                    // Combine specific colors with random colors
+                                                    let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
+
+                                                    new Chart(document.getElementById('doughnutChart6'), {
+                                                        type: 'doughnut',
+                                                        data: {
+                                                            labels: labels,
+                                                            datasets: [{
+                                                                label: 'Mill',
+                                                                data: dataCounts,
+                                                                backgroundColor: combinedColors,
+                                                                hoverOffset: 4
+                                                            }]
+                                                        },
+                                                        options: {
+                                                            plugins: {
+                                                                legend: {
+                                                                    display: true,
+                                                                    position: 'bottom',
+                                                                    labels: {
+                                                                        generateLabels: function (chart) {
+                                                                            return topLabelsForLegend.map(label => ({
+                                                                                text: label,
+                                                                                fillStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                strokeStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                lineWidth: 2,
+                                                                                hidden: false
+                                                                            }));
+                                                                        }
+                                                                    }
+                                                                },
+                                                                tooltip: {
+                                                                    callbacks: {
+                                                                        label: function (context) {
+                                                                            let label = context.label || '';
+                                                                            if (label) {
+                                                                                label += ': ';
+                                                                            }
+                                                                            label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
+                                                                            return label;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    });
+                                                });
+                                            </script>
+                                            <!-- End Doughnut CHart -->
+
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Revenue Card -->
+                            </div>
                         </div>
+                        <div class="tab-pane fade" id="v-pills-facilities" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                            <div class="row">
+                                <!-- Revenue Card -->
+                                <div class="col-xxl-4 col-md-4">
+                                    <div class="card info-card revenue-card">
 
-                        <div class="card-body">
-                            <h5 class="card-title">Mill list</h5>
-                            <!-- <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p> -->
+                                        <div class="card-body">
+                                            <h5 class="card-title">Supplybase Region</h5>
 
-                            <!-- Table with stripped rows -->
-                            <table class="table datatable">
-                                <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Position</th>
-                                    <th scope="col">Age</th>
-                                    <th scope="col">Start Date</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Brandon Jacob</td>
-                                    <td>Designer</td>
-                                    <td>28</td>
-                                    <td>2016-05-25</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Bridie Kessler</td>
-                                    <td>Developer</td>
-                                    <td>35</td>
-                                    <td>2014-12-05</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Ashleigh Langosh</td>
-                                    <td>Finance</td>
-                                    <td>45</td>
-                                    <td>2011-08-12</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Angus Grady</td>
-                                    <td>HR</td>
-                                    <td>34</td>
-                                    <td>2012-06-11</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Raheem Lehner</td>
-                                    <td>Dynamic Division Officer</td>
-                                    <td>47</td>
-                                    <td>2011-04-19</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <!-- End Table with stripped rows -->
+                                            <!-- Doughnut Chart -->
+                                            <canvas id="doughnutChar7" style="max-height: 400px;"></canvas>
+                                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                            <script>
+                                                document.addEventListener("DOMContentLoaded", () => {
+                                                    let facilitiesRegionArray = @json($facilitiesRegionArray);
 
+                                                    // Sort facilitiesRegionArray based on count in descending order
+                                                    facilitiesRegionArray.sort((a, b) => b.count - a.count);
+
+                                                    // Ambil 4 label teratas untuk ditampilkan di bawah grafik
+                                                    let topLabelsForLegend = facilitiesRegionArray.slice(0, 4).map(item => item.facilities_country);
+
+                                                    let labels = facilitiesRegionArray.map(item => item.facilities_country);
+                                                    let dataCounts = facilitiesRegionArray.map(item => item.count);
+
+                                                    // Define specific colors for Indonesia and Malaysia
+                                                    let specificColors = {
+                                                        'Indonesia': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'Malaysia': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                        'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
+                                                        'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        // Add more specific colors for other countries as needed
+                                                    };
+
+                                                    // Fungsi untuk menghasilkan warna acak
+                                                    function generateRandomColors(numColors) {
+                                                        var colors = [];
+                                                        for (var i = 0; i < numColors; i++) {
+                                                            var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+                                                            colors.push(randomColor);
+                                                        }
+                                                        return colors;
+                                                    }
+
+                                                    // Combine specific colors with random colors
+                                                    let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
+
+                                                    new Chart(document.getElementById('doughnutChart7'), {
+                                                        type: 'doughnut',
+                                                        data: {
+                                                            labels: labels,
+                                                            datasets: [{
+                                                                label: 'Mill',
+                                                                data: dataCounts,
+                                                                backgroundColor: combinedColors,
+                                                                hoverOffset: 4
+                                                            }]
+                                                        },
+                                                        options: {
+                                                            plugins: {
+                                                                legend: {
+                                                                    display: true,
+                                                                    position: 'bottom',
+                                                                    labels: {
+                                                                        generateLabels: function (chart) {
+                                                                            return topLabelsForLegend.map(label => ({
+                                                                                text: label,
+                                                                                fillStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                strokeStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                lineWidth: 2,
+                                                                                hidden: false
+                                                                            }));
+                                                                        }
+                                                                    }
+                                                                },
+                                                                tooltip: {
+                                                                    callbacks: {
+                                                                        label: function (context) {
+                                                                            let label = context.label || '';
+                                                                            if (label) {
+                                                                                label += ': ';
+                                                                            }
+                                                                            label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
+                                                                            return label;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    });
+                                                });
+                                            </script>
+                                            <!-- End Doughnut Chart -->
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Revenue Card -->
+
+                                <!-- Revenue Card -->
+                                <div class="col-xxl-4 col-md-4">
+                                    <div class="card info-card revenue-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">Supplier Type</h5>
+
+                                            <!-- Doughnut Chart -->
+                                            <canvas id="doughnutChart8" style="max-height: 400px;">
+                                            </canvas>
+                                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                            <script>
+                                                document.addEventListener("DOMContentLoaded", () => {
+                                                    let facilitiesTypeArray = @json($facilitiesTypeArray);
+
+                                                    // Sort facilitiesTypeArray based on count in descending order
+                                                    facilitiesTypeArray.sort((a, b) => b.count - a.count);
+
+                                                    // Ambil 4 label teratas untuk ditampilkan di bawah grafik
+                                                    let topLabelsForLegend = facilitiesTypeArray.slice(0, 4).map(item => item.facilities_type);
+
+                                                    let labels = facilitiesTypeArray.map(item => item.facilities_type);
+                                                    let dataCounts = facilitiesTypeArray.map(item => item.count);
+
+                                                    // Define specific colors for Indonesia and Malaysia
+                                                    let specificColors = {
+                                                        'Manage by Plantation': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'Independent Mill': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                        'Thailand': 'rgb(62, 250, 153)', // Blue for Thailand
+                                                        'Colombia': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        // Add more specific colors for other countries as needed
+                                                    };
+
+                                                    // Fungsi untuk menghasilkan warna acak
+                                                    function generateRandomColors(numColors) {
+                                                        var colors = [];
+                                                        for (var i = 0; i < numColors; i++) {
+                                                            var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+                                                            colors.push(randomColor);
+                                                        }
+                                                        return colors;
+                                                    }
+
+                                                    // Combine specific colors with random colors
+                                                    let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
+
+                                                    new Chart(document.getElementById('doughnutChart8'), {
+                                                        type: 'doughnut',
+                                                        data: {
+                                                            labels: labels,
+                                                            datasets: [{
+                                                                label: 'Mill',
+                                                                data: dataCounts,
+                                                                backgroundColor: combinedColors,
+                                                                hoverOffset: 4
+                                                            }]
+                                                        },
+                                                        options: {
+                                                            plugins: {
+                                                                legend: {
+                                                                    display: true,
+                                                                    position: 'bottom',
+                                                                    labels: {
+                                                                        generateLabels: function (chart) {
+                                                                            return topLabelsForLegend.map(label => ({
+                                                                                text: label,
+                                                                                fillStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                strokeStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                lineWidth: 2,
+                                                                                hidden: false
+                                                                            }));
+                                                                        }
+                                                                    }
+                                                                },
+                                                                tooltip: {
+                                                                    callbacks: {
+                                                                        label: function (context) {
+                                                                            let label = context.label || '';
+                                                                            if (label) {
+                                                                                label += ': ';
+                                                                            }
+                                                                            label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
+                                                                            return label;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    });
+                                                });
+                                            </script>
+                                            <!-- End Doughnut CHart -->
+
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Revenue Card -->
+
+                                <!-- Revenue Card -->
+                                <div class="col-xxl-4 col-md-4">
+                                    <div class="card info-card revenue-card">
+
+                                        <div class="card-body">
+                                            <h5 class="card-title">RSPO Certified</h5>
+
+                                            <!-- Doughnut Chart -->
+                                            <canvas id="doughnutChart9" style="max-height: 400px;"></canvas>
+                                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                            <script>
+                                                document.addEventListener("DOMContentLoaded", () => {
+                                                    let facilitiesRspoArray = @json($facilitiesRspoArray);
+
+                                                    // Sort facilitiesRspoArray based on count in descending order
+                                                    facilitiesRspoArray.sort((a, b) => b.count - a.count);
+
+                                                    // Ambil 4 label teratas untuk ditampilkan di bawah grafik
+                                                    let topLabelsForLegend = facilitiesRspoArray.slice(0, 4).map(item => item.facilities_rspo);
+
+                                                    let labels = facilitiesRspoArray.map(item => item.facilities_rspo);
+                                                    let dataCounts = facilitiesRspoArray.map(item => item.count);
+
+                                                    // Define specific colors for Indonesia and Malaysia
+                                                    let specificColors = {
+                                                        'No': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                        'IP': 'rgb(62, 250, 153)', // Blue for Thailand
+                                                        'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                        // Add more specific colors for other countries as needed
+                                                    };
+
+                                                    // Fungsi untuk menghasilkan warna acak
+                                                    function generateRandomColors(numColors) {
+                                                        var colors = [];
+                                                        for (var i = 0; i < numColors; i++) {
+                                                            var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';
+                                                            colors.push(randomColor);
+                                                        }
+                                                        return colors;
+                                                    }
+
+                                                    // Combine specific colors with random colors
+                                                    let combinedColors = labels.map(label => specificColors[label] || generateRandomColors(1)[0]);
+
+                                                    new Chart(document.getElementById('doughnutChart9'), {
+                                                        type: 'doughnut',
+                                                        data: {
+                                                            labels: labels,
+                                                            datasets: [{
+                                                                label: 'Mill',
+                                                                data: dataCounts,
+                                                                backgroundColor: combinedColors,
+                                                                hoverOffset: 4
+                                                            }]
+                                                        },
+                                                        options: {
+                                                            plugins: {
+                                                                legend: {
+                                                                    display: true,
+                                                                    position: 'bottom',
+                                                                    labels: {
+                                                                        generateLabels: function (chart) {
+                                                                            return topLabelsForLegend.map(label => ({
+                                                                                text: label,
+                                                                                fillStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                strokeStyle: specificColors[label] || generateRandomColors(1)[0],
+                                                                                lineWidth: 2,
+                                                                                hidden: false
+                                                                            }));
+                                                                        }
+                                                                    }
+                                                                },
+                                                                tooltip: {
+                                                                    callbacks: {
+                                                                        label: function (context) {
+                                                                            let label = context.label || '';
+                                                                            if (label) {
+                                                                                label += ': ';
+                                                                            }
+                                                                            label += ((context.parsed * 100) / context.dataset.data.reduce((a, b) => a + b, 0)).toFixed(2) + '%';
+                                                                            return label;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    });
+                                                });
+                                            </script>
+                                            <!-- End Doughnut CHart -->
+
+                                        </div>
+
+                                    </div>
+                                </div><!-- End Revenue Card -->
+                            </div>
                         </div>
-                    
-                    </div><!-- End Recent Activity -->
+                    </div>
+                </div>
+                <!-- End Vertical Pills Tabs -->
 
-                </div><!-- End Right side columns -->
             </div>
         </div>
+        
+        <!-- Recent Activity -->
+        <div class="card">
+
+            <div class="card-body">
+                <!-- <h5 class="card-title">Maps sedang di siapkan.. <span></span></h5> -->
+                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4826443219645!2d106.79983007462315!3d-6.5867697643880545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5900337fbe1%3A0x41efae520676fac5!2sEarthqualizer%20Foundation!5e0!3m2!1sen!2sus!4v1699127994718!5m2!1sen!2sus" width="530" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                <!-- <img src="{{ asset('asset/NiceAdmin/assets/img/maps1.png') }}" alt="" class="img-fluid"> -->
+                <iframe style="display: none;" src="//mangomap.com/inovasi-digital293/maps/7c0a6a90-84fa-11ee-82d8-027d7e0bb32b?preview=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" oallowfullscreen="" msallowfullscreen="" width="100%" height="600" onload="this.style.display='block';"></iframe>
+            </div>
+                            
+        </div><!-- End Recent Activity -->
 
     </section>
 
