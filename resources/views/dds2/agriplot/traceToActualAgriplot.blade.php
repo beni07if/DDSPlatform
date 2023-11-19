@@ -867,6 +867,7 @@
                                                 <th scope="col">ID TTP</th>
                                                 <th scope="col">Mill</th>
                                                 <th scope="col">Trace to</th>
+                                                <th scope="col">Estate ID</th>
                                                 <th scope="col">Estate</th>
                                             </tr>
                                             </thead>
@@ -879,6 +880,7 @@
                                                     <td>{{ $ttp->ttp_eq_id }}</td>
                                                     <td>{{ $ttp->mill_name }}</td>
                                                     <td>to</td>
+                                                    <td>{{ $ttp->agriplot_estate_name_id }}</td>
                                                     <td>{{ $ttp->agriplot_estate_name }}</td>
                                                 </tr>
                                                 @endforeach

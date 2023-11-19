@@ -15,8 +15,6 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('ttp_eq_id');
             $table->string('mill_eq_id');
-            // Pada migrasi 'ttps'
-            $table->foreign('mill_eq_id')->references('mill_eq_id')->on('mills')->onDelete('cascade');
             $table->string('mill_uml_id');
             $table->string('mill_name');
             $table->string('agriplot_eq_id');
