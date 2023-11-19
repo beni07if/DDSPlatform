@@ -245,7 +245,7 @@
                                                                     'No': 'rgb(47, 79, 79)', // Green for Indonesia
                                                                     'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
                                                                     'IP': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                                    'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                                    'IP; MB': 'rgb(46, 139, 87)',  // Blue for Colombia
                                                                     // Add more specific colors for other countries as needed
                                                                 };
 
@@ -342,7 +342,7 @@
                                                                     'Not yet verified': 'rgb(47, 79, 79)', // Green for Indonesia
                                                                     'No Risk': 'rgb(43, 188, 144)', // Blue for Malaysia
                                                                     'Low Risk': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                                    'Hight Risk': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                                    'High Risk': 'rgb(46, 139, 87)',  // Blue for Colombia
                                                                     // Add more specific colors for other countries as needed
                                                                 };
 
@@ -437,7 +437,7 @@
                                                                 let specificColors = {
                                                                     'Not yet verified': 'rgb(47, 79, 79)', // Green for Indonesia
                                                                     'Low Risk': 'rgb(43, 188, 144)', // Blue for Malaysia
-                                                                    'Hight Risk': 'rgb(62, 250, 153)', // Blue for Thailand
+                                                                    'High Risk': 'rgb(62, 250, 153)', // Blue for Thailand
                                                                     'No Risk': 'rgb(46, 139, 87)',  // Blue for Colombia
                                                                     // Add more specific colors for other countries as needed
                                                                 };
