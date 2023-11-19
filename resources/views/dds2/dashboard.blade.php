@@ -462,7 +462,7 @@
                                                         data: {
                                                             labels: labels,
                                                             datasets: [{
-                                                                label: 'Mill',
+                                                                label: 'Refinery',
                                                                 data: dataCounts,
                                                                 backgroundColor: combinedColors,
                                                                 hoverOffset: 4
@@ -557,7 +557,7 @@
                                                         data: {
                                                             labels: labels,
                                                             datasets: [{
-                                                                label: 'Mill',
+                                                                label: 'Refinery',
                                                                 data: dataCounts,
                                                                 backgroundColor: combinedColors,
                                                                 hoverOffset: 4
@@ -630,7 +630,7 @@
                                                     // Define specific colors for Indonesia and Malaysia
                                                     let specificColors = {
                                                         '': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                        'RSPO': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                        'RSPO - MB': 'rgb(43, 188, 144)', // Blue for Malaysia
                                                         // Add more specific colors for other countries as needed
                                                     };
 
@@ -652,7 +652,7 @@
                                                         data: {
                                                             labels: labels,
                                                             datasets: [{
-                                                                label: 'Mill',
+                                                                label: 'Refinery',
                                                                 data: dataCounts,
                                                                 backgroundColor: combinedColors,
                                                                 hoverOffset: 4
@@ -750,7 +750,7 @@
                                                         data: {
                                                             labels: labels,
                                                             datasets: [{
-                                                                label: 'Mill',
+                                                                label: 'Facilities',
                                                                 data: dataCounts,
                                                                 backgroundColor: combinedColors,
                                                                 hoverOffset: 4
@@ -845,7 +845,7 @@
                                                         data: {
                                                             labels: labels,
                                                             datasets: [{
-                                                                label: 'Mill',
+                                                                label: 'Facilities',
                                                                 data: dataCounts,
                                                                 backgroundColor: combinedColors,
                                                                 hoverOffset: 4
@@ -940,7 +940,7 @@
                                                         data: {
                                                             labels: labels,
                                                             datasets: [{
-                                                                label: 'Mill',
+                                                                label: 'Facilities',
                                                                 data: dataCounts,
                                                                 backgroundColor: combinedColors,
                                                                 hoverOffset: 4
