@@ -191,7 +191,7 @@
                                                                     'No': 'rgb(47, 79, 79)', // Green for Indonesia
                                                                     'IP': 'rgb(43, 188, 144)', // Blue for Malaysia
                                                                     'MB': 'rgb(62, 250, 153)', // Blue for Thailand
-                                                                    'IP;MB': 'rgb(46, 139, 87)',  // Blue for Colombia
+                                                                    'IP; MB': 'rgb(46, 139, 87)',  // Blue for Colombia
                                                                     // Add more specific colors for other countries as needed
                                                                 };
 

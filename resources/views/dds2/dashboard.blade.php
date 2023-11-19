@@ -629,8 +629,8 @@
 
                                                     // Define specific colors for Indonesia and Malaysia
                                                     let specificColors = {
-                                                        '': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                        'RSPO - MB': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                        'Unknown': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
                                                         // Add more specific colors for other countries as needed
                                                     };
 
@@ -917,8 +917,8 @@
 
                                                     // Define specific colors for Indonesia and Malaysia
                                                     let specificColors = {
-                                                        '': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                        'RSPO - MB': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                        'Unknown': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'MB': 'rgb(43, 188, 144)', // Blue for Malaysia
                                                         // Add more specific colors for other countries as needed
                                                     };
 
