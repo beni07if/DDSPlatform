@@ -123,7 +123,7 @@
                                                 <div class="card info-card revenue-card">
 
                                                     <div class="card-body">
-                                                        <h5 class="card-title">Supplier mill region</h5>
+                                                        <h5 class="card-title">Supplier Mill Country</h5>
 
                                                         <!-- Doughnut Chart -->
                                                         <canvas id="doughnutChart" style="max-height: 400px;"></canvas>
