@@ -302,12 +302,14 @@
 
         <div class="row feature-item">
             <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0" data-aos="fade-left" data-aos-delay="150">
-                <h1><b>DDS INOVASI AGRIPLOT</b></h1>
+                <h1><b>EUDR Agriplot Due-Diligence system</b></h1>
+                <!-- <p>To adhere to current and forthcoming regulations in the palm oil trading industry, industry players must surmount several challenges to maintain their competitiveness and global engagement. </p>
+                <p>Inovasi Digital is dedicated to offering solutions through our due diligence system, known as Inovasi Agriplot, which constitutes a comprehensive package designed to effectively address international directives' due diliegence concerns.</p> -->
                 <p>
-                    To adhere to current and forthcoming regulations in the palm oil trading industry, industry players must surmount several challenges to maintain their competitiveness and global engagement. 
+                Introducing the Agriplot Due-Diligence system: Your Partner for Compliance with EU Deforestation Regulation.
                 </p>
                 <p>
-                    inovasi Digital is dedicated to offering solutions through our due diligence system, known as Inovasi Agriplot, which constitutes a comprehensive package designed to effectively address international directives' due diliegence concerns.
+                As the European Union's Deforestation Regulation (EUDR) takes effect, businesses operating within Europe need robust solutions to ensure compliance. The Agriplot  Due Diligence system, brought to you by MosaiX, is tailored to meet the demands  of operators dealing with commodities covered under the EUDR.
                 </p>
             </div>
             <!-- <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
