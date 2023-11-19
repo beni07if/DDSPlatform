@@ -555,7 +555,7 @@
                     <div class="count-box">
                       <i class="bi bi-flag"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter">Countries</span>
+                        <span data-purecounter-start="0" data-purecounter-end="34" data-purecounter-duration="1" class="purecounter">Countries</span>
                         <!-- <p>Countries</p> -->
                       </div>
                       <span>&nbsp; countries</span>
@@ -566,7 +566,7 @@
                     <div class="count-box">
                       <i class="bi bi-geo" style="color: #ee6c20;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="60" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Projects</p> -->
                       </div>
                       <span>M &nbsp; of plots</span>
@@ -599,10 +599,10 @@
                     <div class="count-box">
                       <i class="bi bi-flag"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
                        
                       </div>
-                      <span>&nbsp; countries</span>
+                      <span>&nbsp;Upcoming</span>
                     </div>
                   </div>
   
@@ -610,10 +610,10 @@
                     <div class="count-box">
                       <i class="bi bi-geo" style="color: #ee6c20;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Projects</p> -->
                       </div>
-                      <span>M&nbsp; of plots</span>
+                      <span>&nbsp;Upcoming</span>
                     </div>
                   </div>
   
@@ -621,10 +621,10 @@
                     <div class="count-box">
                       <i class="bi bi-map" style="color: #15be56;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Hours Of Support</p> -->
                       </div>
-                      <span>M&nbsp; ha of plots</span>
+                      <span>&nbsp;Upcoming</span>
                     </div>
                   </div>
   
@@ -643,10 +643,10 @@
                     <div class="count-box">
                       <i class="bi bi-flag"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Countries</p> -->
                       </div>
-                      <span>&nbsp; countries</span>
+                      <span>&nbsp;Upcoming</span>
                     </div>
                   </div>
   
@@ -654,10 +654,10 @@
                     <div class="count-box">
                       <i class="bi bi-geo" style="color: #ee6c20;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Projects</p> -->
                       </div>
-                      <span>M&nbsp; of plots</span>
+                      <span>&nbsp;Upcoming</span>
                     </div>
                   </div>
   
@@ -665,10 +665,10 @@
                     <div class="count-box">
                       <i class="bi bi-map" style="color: #15be56;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Hours Of Support</p> -->
                       </div>
-                      <span>M&nbsp; ha of plots</span>
+                      <span>&nbsp;Upcoming</span>
                     </div>
                   </div>
   
@@ -687,10 +687,10 @@
                     <div class="count-box">
                       <i class="bi bi-flag"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Countries</p> -->
                       </div>
-                      <span>&nbsp; countries</span>
+                      <span>&nbsp;Upcoming</span>
                     </div>
                   </div>
   
@@ -698,10 +698,10 @@
                     <div class="count-box">
                       <i class="bi bi-geo" style="color: #ee6c20;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Projects</p> -->
                       </div>
-                      <span>M&nbsp; of plots</span>
+                      <span>&nbsp;Upcoming</span>
                     </div>
                   </div>
   
@@ -709,10 +709,10 @@
                     <div class="count-box">
                       <i class="bi bi-map" style="color: #15be56;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Hours Of Support</p> -->
                       </div>
-                      <span>M&nbsp; ha of plots</span>
+                      <span>&nbsp;Upcoming</span>
                     </div>
                   </div>
   
@@ -731,10 +731,10 @@
                     <div class="count-box">
                       <i class="bi bi-flag"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Countries</p> -->
                       </div>
-                      <span>&nbsp; countries</span>
+                      <span>&nbsp;Upcoming</span>
                     </div>
                   </div>
   
@@ -742,10 +742,10 @@
                     <div class="count-box">
                       <i class="bi bi-geo" style="color: #ee6c20;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="17" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Projects</p> -->
                       </div>
-                      <span>M&nbsp; of plots</span>
+                      <span>&nbsp;Upcoming</span>
                     </div>
                   </div>
   
@@ -753,10 +753,10 @@
                     <div class="count-box">
                       <i class="bi bi-map" style="color: #15be56;"></i>
                       <div>
-                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
                         <!-- <p>Hours Of Support</p> -->
                       </div>
-                      <span>M&nbsp; ha of plots</span>
+                      <span>&nbsp;Upcoming</span>
                     </div>
                   </div>
   
