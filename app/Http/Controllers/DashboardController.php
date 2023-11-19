@@ -156,8 +156,14 @@ class DashboardController extends Controller
         ->groupBy('mill_deforestation_risk')
         ->get();
         $millDeforestationRiskArray = $millDeforestationRisk->toArray();
+
+        $millLegalProductionForest = DB::table('mills')
+        ->select('mill_legal_production_forest', DB::raw('COUNT(*) as count'))
+        ->groupBy('mill_legal_production_forest')
+        ->get();
+        $millLegalProductionForestArray = $millLegalProductionForest->toArray();
         
-        return view('dds2.supplierMill.supplierMill', compact('millss', 'agriplots', 'millRegionArray', 'millTypeArray', 'millRspoArray', 'millDeforestationRiskArray'));
+        return view('dds2.supplierMill.supplierMill', compact('millss', 'agriplots', 'millRegionArray', 'millTypeArray', 'millRspoArray', 'millDeforestationRiskArray', 'millLegalProductionForestArray'));
     }
 
     public function supplierMillLegalPrfRisk()
@@ -188,7 +194,13 @@ class DashboardController extends Controller
         ->get();
         $millDeforestationRiskArray = $millDeforestationRisk->toArray();
         
-        return view('dds2.supplierMill.supplierMill', compact('millss', 'agriplots', 'millRegionArray', 'millTypeArray', 'millRspoArray', 'millDeforestationRiskArray'));
+        $millLegalProductionForest = DB::table('mills')
+        ->select('mill_legal_production_forest', DB::raw('COUNT(*) as count'))
+        ->groupBy('mill_legal_production_forest')
+        ->get();
+        $millLegalProductionForestArray = $millLegalProductionForest->toArray();
+
+        return view('dds2.supplierMill.supplierMill', compact('millss', 'agriplots', 'millRegionArray', 'millTypeArray', 'millRspoArray', 'millDeforestationRiskArray', 'millLegalProductionForestArray'));
     }
 
     public function supplierMillLegalLanduseRisk()
@@ -219,7 +231,13 @@ class DashboardController extends Controller
         ->get();
         $millDeforestationRiskArray = $millDeforestationRisk->toArray();
         
-        return view('dds2.supplierMill.supplierMill', compact('millss', 'agriplots', 'millRegionArray', 'millTypeArray', 'millRspoArray', 'millDeforestationRiskArray'));
+        $millLegalProductionForest = DB::table('mills')
+        ->select('mill_legal_production_forest', DB::raw('COUNT(*) as count'))
+        ->groupBy('mill_legal_production_forest')
+        ->get();
+        $millLegalProductionForestArray = $millLegalProductionForest->toArray();
+                
+        return view('dds2.supplierMill.supplierMill', compact('millss', 'agriplots', 'millRegionArray', 'millTypeArray', 'millRspoArray', 'millDeforestationRiskArray', 'millLegalProductionForestArray'));
     }
 
     public function supplierMillComplexSupplybaseRisk()
@@ -250,7 +268,13 @@ class DashboardController extends Controller
         ->get();
         $millDeforestationRiskArray = $millDeforestationRisk->toArray();
         
-        return view('dds2.supplierMill.supplierMill', compact('millss', 'agriplots', 'millRegionArray', 'millTypeArray', 'millRspoArray', 'millDeforestationRiskArray'));
+        $millLegalProductionForest = DB::table('mills')
+        ->select('mill_legal_production_forest', DB::raw('COUNT(*) as count'))
+        ->groupBy('mill_legal_production_forest')
+        ->get();
+        $millLegalProductionForestArray = $millLegalProductionForest->toArray();
+        
+        return view('dds2.supplierMill.supplierMill', compact('millss', 'agriplots', 'millRegionArray', 'millTypeArray', 'millRspoArray', 'millDeforestationRiskArray', 'millLegalProductionForestArray'));
     }
 
     public function traceToActualAgriplot_(Request $request)

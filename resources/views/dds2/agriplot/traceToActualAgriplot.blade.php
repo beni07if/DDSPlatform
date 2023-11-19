@@ -1284,31 +1284,31 @@
                                         <!-- Table with stripped rows -->
                                         <table class="table datatable">
                                             <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Mill</th>
-                                                <th scope="col">Trace to</th>
-                                                <th scope="col">Agriplot ID</th>
-                                            </tr>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Mill</th>
+                                                    <th scope="col">Trace to</th>
+                                                    <th scope="col">Agriplot ID</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
                                                 <?php $no = 0; ?>
                                                 @foreach($ttps0 as $ttp)
-                                                @foreach($agriplots as $agriplot)
-                                                @foreach($agriplot as $item)
-                                                <?php $no++ ?>
-                                                <tr>
-                                                    <th scope="row">{{$no}}</th>
-                                                    <td>{{ $ttp->mill_name }}</td>
-                                                    <td>to</td>
-                                                    <td>{{ $item->agriplot_eq_id }}</td>
-                                                </tr>
-                                                @endforeach
-                                                @endforeach
+                                                    @foreach($agriplots as $agriplotCollection)
+                                                        @foreach($agriplotCollection as $item)
+                                                            <?php $no++ ?>
+                                                            <tr>
+                                                                <th scope="row">{{ $no }}</th>
+                                                                <td>{{ $ttp->mill_name }}</td>
+                                                                <td>to</td>
+                                                                <td>{{ $item->agriplot_eq_id }}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                    @endforeach
                                                 @endforeach
                                             </tbody>
-
                                         </table>
+
                                         <!-- End Table with stripped rows -->
                                     </div>
                                 </div><!-- End Default Tabs -->
