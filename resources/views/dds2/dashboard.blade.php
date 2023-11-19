@@ -144,15 +144,15 @@
                                                     millRegionArray.sort((a, b) => b.count - a.count);
 
                                                     // Ambil 4 label teratas untuk ditampilkan di bawah grafik
-                                                    let topLabelsForLegend = millRegionArray.slice(0, 2).map(item => item.mill_country);
+                                                    let topLabelsForLegend = millRegionArray.slice(0, 2).map(item => item.mill_region);
 
-                                                    let labels = millRegionArray.map(item => item.mill_country);
+                                                    let labels = millRegionArray.map(item => item.mill_region);
                                                     let dataCounts = millRegionArray.map(item => item.count);
 
                                                     // Define specific colors for Indonesia and Malaysia
                                                     let specificColors = {
-                                                        'Indonesia': 'rgb(47, 79, 79)', // Green for Indonesia
-                                                        'Malaysia': 'rgb(43, 188, 144)', // Blue for Malaysia
+                                                        'South East Asia': 'rgb(47, 79, 79)', // Green for Indonesia
+                                                        'Latin America': 'rgb(43, 188, 144)', // Blue for Malaysia
                                                         // Add more specific colors for other countries as needed
                                                     };
 
@@ -419,7 +419,7 @@
                                     <div class="card info-card revenue-card">
 
                                         <div class="card-body">
-                                            <h5 class="card-title">Supplybase Region</h5>
+                                            <h5 class="card-title">Supplybase Country</h5>
 
                                             <!-- Doughnut Chart -->
                                             <canvas id="doughnutChart4" style="max-height: 400px;"></canvas>
@@ -707,7 +707,7 @@
                                     <div class="card info-card revenue-card">
 
                                         <div class="card-body">
-                                            <h5 class="card-title">Supplybase Region</h5>
+                                            <h5 class="card-title">Supplybase Country</h5>
 
                                             <!-- Doughnut Chart -->
                                             <canvas id="doughnutChart7" style="max-height: 400px;"></canvas>

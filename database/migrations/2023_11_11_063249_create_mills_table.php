@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('mill_company_name')->nullable();
             $table->string('mill_company_group_id')->nullable();
             $table->string('mill_company_group')->nullable();
+            $table->string('mill_region')->nullable();
             $table->string('mill_country')->nullable();
             $table->string('mill_province')->nullable();
             $table->string('mill_district')->nullable();

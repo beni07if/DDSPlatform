@@ -29,8 +29,8 @@ class DashboardController extends Controller
             ->count();
 
         $millRegion = DB::table('mills')
-        ->select('mill_country', DB::raw('COUNT(*) as count'))
-        ->groupBy('mill_country')
+        ->select('mill_region', DB::raw('COUNT(*) as count'))
+        ->groupBy('mill_region')
         ->get();
         $millRegionArray = $millRegion->toArray();
 

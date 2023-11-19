@@ -1303,7 +1303,7 @@
                                                                 <th scope="row">{{ $no }}</th>
                                                                 <td>{{ $ttp->mill_name }}</td>
                                                                 <td>to</td>
-                                                                <td>{{ $item->agriplot_eq_id }}</td>
+                                                                <td>TTP{{ $ttp->agriplot_estate_name_id }} - {{ $no }}</td>
                                                             </tr>
                                                         @endforeach
                                                     @endforeach
