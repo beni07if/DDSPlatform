@@ -999,11 +999,17 @@
         <div class="card">
             <div class="card-body" style="position: relative;">
                 <div class="peta2" style="position: relative; z-index: 0;">
-                    <iframe style="display: none;" src="//mangomap.com/inovasi-digital293/maps/7c0a6a90-84fa-11ee-82d8-027d7e0bb32b?preview=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" oallowfullscreen="" msallowfullscreen="" width="100%" height="600" onload="this.style.display='block';"></iframe>
+                    <iframe style="display: none;" src="//mangomap.com/inovasi-digital293/maps/7c0a6a90-84fa-11ee-82d8-027d7e0bb32b?preview=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" oallowfullscreen="" msallowfullscreen="" width="100%" height="800" onload="this.style.display='block';"></iframe>
+
                     <div class="peta1" style="position: absolute; top: 0; left: 0; width: 100%; height: 120px; background-color: white; z-index: 1;"></div>
+                    
+                    <!-- Div untuk menutupi sebagian peta bagian bawah -->
+                    <div class="peta3" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 40px; background-color: white; z-index: 2;"></div>
                 </div>
             </div>
-        </div><!-- End Recent Activity -->
+        </div>
+        
+        <!-- End Recent Activity -->
 
     </section>
 
