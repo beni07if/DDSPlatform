@@ -796,7 +796,7 @@
     </section><!-- End Features Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+    <section id="testimonials" class="testimonials" hidden>
       <div class="container" data-aos="zoom-in">
 
         <header class="section-header">
