@@ -54,13 +54,15 @@
                     <!-- Recent Activity -->
                     <div class="card">
 
-                        <div class="card-body">    
-                            <div class="peta2" style="position: relative; z-index: 0;">
-                            <iframe style="display: none;" src="//mangomap.com/inovasi-digital293/maps/a63695a6-81f2-11ee-9ba6-027d7e0bb32b?preview=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" oallowfullscreen="" msallowfullscreen="" width="100%" height="600" onload="this.style.display='block';"></iframe>
 
-                                <div class="peta1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100px; background-color: white; z-index: 1;"></div>
-                            </div>
-                        </div>
+                        <div class="card-body" style="position: relative;">
+    <div class="peta2" style="position: relative; z-index: 0;">
+    <iframe style="display: none;" src="//mangomap.com/inovasi-digital293/maps/a63695a6-81f2-11ee-9ba6-027d7e0bb32b?preview=true" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" oallowfullscreen="" msallowfullscreen="" width="100%" height="600" onload="this.style.display='block';"></iframe>
+
+        <div class="peta1" style="position: absolute; top: 0; left: 0; width: 100%; height: 120px; background-color: white; z-index: 1;"></div>
+    </div>
+</div>
+
 
                         <div class="card">
                             <div class="card-body">
