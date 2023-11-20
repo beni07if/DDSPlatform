@@ -795,62 +795,6 @@
       </div>
     </section><!-- End Features Section -->
 
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials" hidden>
-      <div class="container" data-aos="zoom-in">
-
-        <header class="section-header">
-          <h3>Testimonials</h3>
-        </header>
-
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-
-            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-              <div class="swiper-wrapper">
-
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <img src="{{ asset('asset/Rapid/assets/img/user-testimonials.png') }}" class="testimonial-img" alt="">
-                    <h3>Iswari Nallisamy - Sime Darby Plantation/Sime Darby Oils</h3>
-                    <h4>Lead, Supplier Monitoring & Grievance</h4>
-                    <p>
-                      ...
-                    </p>
-                  </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <img src="{{ asset('asset/Rapid/assets/img/user-testimonials.png') }}" class="testimonial-img" alt="">
-                    <h3>Wong Kok Seng - Fuji Oil</h3>
-                    <h4>Sustainability Manager</h4>
-                    <p>
-                      ...
-                    </p>
-                  </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <img src="{{ asset('asset/Rapid/assets/img/user-testimonials.png') }}" class="testimonial-img" alt="">
-                    <h3>Amin - BGA</h3>
-                    <h4>Manager</h4>
-                    <p>
-                      ...
-                    </p>
-                  </div>
-                </div><!-- End testimonial item -->
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
     <!-- ======= Team Section ======= -->
     <!-- <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
