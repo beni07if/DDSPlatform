@@ -27,11 +27,11 @@
                             Supplier Mill
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('supplierMill')}}">All Supplier</a><div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('supplierMill')}}">All Suppliers</a><div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('supplierMillDeforestationRisk')}}">Deforestation Risk</a><div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('supplierMillLegalPrfRisk')}}">Legal PRF Risk</a><div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('supplierMillLegalLanduseRisk')}}">Legal Landuse Risk</a><div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('supplierMillComplexSupplybaseRisk')}}">Complex Supplybase Risk</a>
+                            <a class="dropdown-item" href="{{route('supplierMillLegalLanduseRisk')}}">Legal Land Use Risk</a><div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('supplierMillComplexSupplybaseRisk')}}">Complex Supply Base Risk</a>
                         </div>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -85,7 +85,7 @@
                                             <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">ID Agriplot</th>
+                                                <th scope="col">Agriplot ID</th>
                                                 <th scope="col">Country</th>
                                                 <th scope="col">Group Company</th>
                                                 <th scope="col">Type</th>
@@ -117,7 +117,7 @@
                                                 <div class="card info-card revenue-card">
 
                                                     <div class="card-body">
-                                                        <h5 class="card-title">Supplier mill region</h5>
+                                                        <h5 class="card-title">Supplier Mill Region</h5>
 
                                                         <!-- Doughnut Chart -->
                                                         <canvas id="doughnutChart" style="max-height: 400px;"></canvas>

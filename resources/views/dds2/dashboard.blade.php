@@ -27,11 +27,11 @@
                             Supplier Mill
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('supplierMill')}}">All Supplier</a><div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('supplierMill')}}">All Suppliers</a><div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('supplierMillDeforestationRisk')}}">Deforestation Risk</a><div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('supplierMillLegalPrfRisk')}}">Legal PRF Risk</a><div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('supplierMillLegalLanduseRisk')}}">Legal Landuse Risk</a><div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('supplierMillComplexSupplybaseRisk')}}">Complex Supplybase Risk</a>
+                            <a class="dropdown-item" href="{{route('supplierMillLegalLanduseRisk')}}">Legal Land Use Risk</a><div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('supplierMillComplexSupplybaseRisk')}}">Complex Supply Base Risk</a>
                         </div>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -131,7 +131,7 @@
                                     <div class="card info-card revenue-card">
 
                                         <div class="card-body">
-                                            <h5 class="card-title">Supplybase Region</h5>
+                                            <h5 class="card-title">Supply Base Region</h5>
 
                                             <!-- Doughnut Chart -->
                                             <canvas id="doughnutChart" style="max-height: 400px;"></canvas>
@@ -419,7 +419,7 @@
                                     <div class="card info-card revenue-card">
 
                                         <div class="card-body">
-                                            <h5 class="card-title">Supplybase Country</h5>
+                                            <h5 class="card-title">Supply Base Country</h5>
 
                                             <!-- Doughnut Chart -->
                                             <canvas id="doughnutChart4" style="max-height: 400px;"></canvas>
@@ -707,7 +707,7 @@
                                     <div class="card info-card revenue-card">
 
                                         <div class="card-body">
-                                            <h5 class="card-title">Supplybase Country</h5>
+                                            <h5 class="card-title">Supply Base Country</h5>
 
                                             <!-- Doughnut Chart -->
                                             <canvas id="doughnutChart7" style="max-height: 400px;"></canvas>

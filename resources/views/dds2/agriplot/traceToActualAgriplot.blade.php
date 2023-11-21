@@ -27,11 +27,11 @@
                             Supplier Mill
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('supplierMill')}}">All Supplier</a><div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('supplierMill')}}">All Suppliers</a><div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('supplierMillDeforestationRisk')}}">Deforestation Risk</a><div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('supplierMillLegalPrfRisk')}}">Legal PRF Risk</a><div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('supplierMillLegalLanduseRisk')}}">Legal Landuse Risk</a><div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('supplierMillComplexSupplybaseRisk')}}">Complex Supplybase Risk</a>
+                            <a class="dropdown-item" href="{{route('supplierMillLegalLanduseRisk')}}">Legal Land Use Risk</a><div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('supplierMillComplexSupplybaseRisk')}}">Complex Supply Base Risk</a>
                         </div>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -475,7 +475,7 @@
                                             <div class="card info-card revenue-card">
 
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Supplier mill region</h5>
+                                                    <h5 class="card-title">Supplier Mill Region</h5>
 
                                                     <!-- Doughnut Chart -->
                                                     <canvas id="doughnutChart" style="max-height: 400px;"></canvas>
@@ -867,7 +867,7 @@
                                         <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">ID TTP</th>
+                                            <th scope="col">TTP ID</th>
                                             <th scope="col">Mill</th>
                                             <th scope="col">Trace to</th>
                                             <th scope="col">Estate ID</th>

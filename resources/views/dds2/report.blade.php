@@ -27,11 +27,11 @@
                             Supplier Mill
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('supplierMill')}}">All Supplier</a><div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('supplierMill')}}">All SupplierS</a><div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('supplierMillDeforestationRisk')}}">Deforestation Risk</a><div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('supplierMillLegalPrfRisk')}}">Legal PRF Risk</a><div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('supplierMillLegalLanduseRisk')}}">Legal Landuse Risk</a><div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('supplierMillComplexSupplybaseRisk')}}">Complex Supplybase Risk</a>
+                            <a class="dropdown-item" href="{{route('supplierMillLegalLanduseRisk')}}">Legal Land Use Risk</a><div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('supplierMillComplexSupplybaseRisk')}}">Complex Supply Base Risk</a>
                         </div>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -56,7 +56,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Reporting Form</h5>
-                                <p class="text-muted">Input the information below using your supply base data. Our system will provide auto-reporting to support due diligence compliance</p>
+                                <p class="text-muted">Input the information below using your supply base data. Our system will provide auto-reporting to support due diligence compliance.</p>
 
                                 <h5 class="card-title">Shipment Information</h5>
                                 <!-- General Form Elements -->
@@ -127,8 +127,8 @@
                                             <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">ID RSPO</th>
-                                                <th scope="col">ID EQ</th>
+                                                <th scope="col">RSPO ID</th>
+                                                <th scope="col">EQ ID</th>
                                                 <th scope="col">Mill Name</th>
                                                 <th scope="col">Company Name</th>
                                             </tr>
@@ -180,8 +180,8 @@
                                 <thead>
                                     <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">ID EQ</th>
-                                    <th scope="col">ID UML</th>
+                                    <th scope="col">EQ ID</th>
+                                    <th scope="col">UML Report Historical</th>
                                     <th scope="col">Mill Name</th>
                                     <th scope="col">Mill Company</th>
                                     <th scope="col">Dewnload</th>

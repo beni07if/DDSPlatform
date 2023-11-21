@@ -51,7 +51,7 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#services">Features</a></li>
           <li><a class="nav-link scrollto" href="#features">About</a></li>
-          <li><a class="nav-link scrollto" href="#features2">Comodity</a></li>
+          <li><a class="nav-link scrollto" href="#features2">Commodity</a></li>
           <li><a class="nav-link scrollto" href="{{route('dashboard')}}" target="_blank">Login</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -90,7 +90,7 @@
     <div class="container d-flex h-100">
       <div class="row justify-content-center align-self-center" data-aos="fade-up">
         <div class="col-lg-6 intro-info order-lg-first order-last" data-aos="zoom-in" data-aos-delay="100">
-          <h2>Ensure compliance regulation effortlessly with <span>Agriplot's Due Diligence System</span></h2>
+          <h2>Ensure compliance with regulations effortlessly with Agriplot's Due Diligence System</span></h2>
           <div>
             <a href="#about" class="btn-get-started scrollto">Get Demo</a>
             <a href="#about" class="btn-get-started scrollto">Learn More</a>
@@ -156,7 +156,7 @@
                 <img src="{{ asset('asset/Rapid/assets/img/services/mapping-supplier.png') }}" width="40px" alt="Your Image" style="color: #ff689b;">
               </div>
               <h4 class="title"><a href="">Mapping Suppliers </a></h4>
-              <p class="description">Agriplot long-term datasets provide comprehensive supplyshed supplier mapping from smallholder plots to the corporate estate area, align with the legal boundary from recognize national land registration system to ensure the EUDR requirements</p>
+              <p class="description">Agriplot's long-term datasets provide comprehensive supply chain supplier mapping, from smallholder plots to the corporate estate area. This aligns with the legal boundaries of the recognized national land registration system to ensure compliance with EUDR requirements.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
@@ -165,8 +165,8 @@
                 <div class="icon" style="background: #fff0da;">
                     <img src="{{ asset('asset/Rapid/assets/img/services/supplier-monitoring.png') }}" width="40px" alt="Your Image" style="color: #e98e06;">
                 </div>
-              <h4 class="title"><a href="">Supplier Monitoriing</a></h4>
-              <p class="description">Since 2014 our supplier group monitoring already provide valueble data intellgence on the deforestation monitoring with high accuracy and actionable data and continue to make sure the support for the EUDR implementation</p>
+              <h4 class="title"><a href="">Supplier Monitoring</a></h4>
+              <p class="description">Since 2014, our supplier group monitoring has consistently provided valuable data intelligence on deforestation, with high accuracy and actionable data. We continue to ensure support for EUDR implementation.</p>
             </div>
           </div>
 
@@ -177,7 +177,7 @@
                     <img src="{{ asset('asset/Rapid/assets/img/services/risk-assessment.png') }}" width="40px" alt="Your Image" style="color: #3fcdc7;">
                 </div>
               <h4 class="title"><a href="">Risk Assessment</a></h4>
-              <p class="description">Our risk assessment methods represent the current situations on the ground with support from the update data on plot level to the national levels to align with the EUDR requirements</p>
+              <p class="description">Our risk assessment methods accurately represent the current situations on the ground. We support these assessments with updated data on both plot and national levels, aligning with EUDR requirements.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3 wow" data-aos="zoom-in" data-aos-delay="100">
@@ -187,7 +187,7 @@
                     <img src="{{ asset('asset/Rapid/assets/img/services/risk-mitigation.png') }}" width="40px" alt="Your Image" style="color: #41cf2e;">
                 </div>
               <h4 class="title"><a href="">Risk Mitigation</a></h4>
-              <p class="description">Be part of the solution to involved on our priority program to support fair industry transformation and comply with the regulation by supporting the smallholder inclusion program, recovery support, supplier traceability and monitoring</p>
+              <p class="description">Be part of the solution by engaging in our priority programs. Support fair industry transformation and comply with regulations by participating in the smallholder inclusion program, recovery support, supplier traceability, and monitoring.</p>
             </div>
           </div>
 
@@ -301,14 +301,14 @@
 
         <div class="row feature-item">
             <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0" data-aos="fade-left" data-aos-delay="150">
-                <h1><b>EUDR Agriplot Due-Diligence system</b></h1>
+                <h1><b>EUDR Agriplot Due-Diligence System</b></h1>
                 <!-- <p>To adhere to current and forthcoming regulations in the palm oil trading industry, industry players must surmount several challenges to maintain their competitiveness and global engagement. </p>
                 <p>Inovasi Digital is dedicated to offering solutions through our due diligence system, known as Inovasi Agriplot, which constitutes a comprehensive package designed to effectively address international directives' due diliegence concerns.</p> -->
                 <p>
-                Introducing the Agriplot Due-Diligence system: Your Partner for Compliance with EU Deforestation Regulation.
+                Introducing the Agriplot Due-Diligence system: Your Partner for Compliance with the EU Deforestation Regulation.
                 </p>
                 <p>
-                As the European Union's Deforestation Regulation (EUDR) takes effect, businesses operating within Europe need robust solutions to ensure compliance. The Agriplot  Due Diligence system, brought to you by MosaiX, is tailored to meet the demands  of operators dealing with commodities covered under the EUDR.
+                As the European Union's Deforestation Regulation (EUDR) takes effect, businesses operating within Europe need robust solutions to ensure compliance. The Agriplot Due Diligence system, brought to you by MosaiX, is tailored to meet the demands of operators dealing with commodities covered under the EUDR.
                 </p>
             </div>
             <!-- <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
@@ -499,7 +499,7 @@
     <section id="features2" class="features2">
     <header class="section-header">
           <h3>Agriplot Global Availability</h3>
-          <p>How significant is Agriplot datasets on the global coverage</p>
+          <p>How significant are Agriplot datasets in terms of global coverage?</p>
         </header>
       <div class="container" data-aos="fade-up">
 
@@ -763,31 +763,6 @@
               </div>
             </div>
           </div><!-- End Tab Content 5 -->
-
-          <div class="tab-pane" id="tab-6">
-            <div class="row gy-4">
-              <div class="col-lg-8 order-2 order-lg-1">
-                <h3>Reprehit</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                </ul>
-              </div>
-              <div class="col-lg-4 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-6.svg" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div><!-- End Tab Content 6 -->
 
         </div>
 
@@ -1070,7 +1045,7 @@
 
         <header class="section-header">
           <h3>EUDR Establishment List</h3>
-          <p>Find out how complex is your company connected to the palm oil production plot.</p>
+          <p>Find out how your company is connected to palm oil production plots and understand the complexity of this connection.</p>
         </header>
 
         <div class="card">
