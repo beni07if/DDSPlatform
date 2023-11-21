@@ -90,7 +90,7 @@
     <div class="container d-flex h-100">
       <div class="row justify-content-center align-self-center" data-aos="fade-up">
         <div class="col-lg-6 intro-info order-lg-first order-last" data-aos="zoom-in" data-aos-delay="100">
-          <h2>Ensure compliance with regulations effortlessly with Agriplot's Due Diligence System</span></h2>
+          <h2>Ensure compliance with regulations effortlessly<br> with <span>Agriplot's Due Diligence System</span></h2>
           <div>
             <a href="#about" class="btn-get-started scrollto">Get Demo</a>
             <a href="#about" class="btn-get-started scrollto">Learn More</a>
