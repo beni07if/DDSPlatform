@@ -52,7 +52,6 @@
           <li><a class="nav-link scrollto" href="#services">Features</a></li>
           <li><a class="nav-link scrollto" href="#features">About</a></li>
           <li><a class="nav-link scrollto" href="#features2">Commodity</a></li>
-          <li><a class="nav-link scrollto" href="{{route('dashboard')}}" target="_blank">Login</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
